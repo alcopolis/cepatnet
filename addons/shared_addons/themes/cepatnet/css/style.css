@@ -2,5 +2,14 @@
 @import 'typo.css';
 @import 'global.css';
 
-article a:hover{color: #FC0}
+
+article{
+	border-top:1px solid rgba(255,255,255,.25);
+	border-bottom:1px solid rgba(0,0,0,.5);
+	padding:10px;
+}
+article:first-child{border-top:none;}
+article:last-child{border-bottom:none;}
+
+article a:hover, article a:visited:hover{color: #FC0}
 .post article h1, .post article h2, .post article h3, .post article h4, .post article h5, .post article h6{padding:0 0 10px 0;}

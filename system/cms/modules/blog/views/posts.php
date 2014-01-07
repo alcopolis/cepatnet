@@ -8,30 +8,33 @@
 
 			<div class="meta">
 
-			<div class="date">
-				{{ helper:lang line="blog:posted_label" }}
-				<span>{{ helper:date timestamp=created_on }}</span>
+                <div class="date">
+                    {{ helper:lang line="blog:posted_label" }}
+                    <span>{{ helper:date timestamp=created_on }}</span>
+                </div>
+    
+                {{ if category }}
+                <div class="category">
+                    {{ helper:lang line="blog:category_label" }}
+                    <span><a href="{{ url:site }}blog/category/{{ category:slug }}">{{ category:title }}</a></span>
+                </div>
+                {{ endif }}
+    
+                {{ if keywords }}
+                <div class="keywords">
+                    {{ keywords }}
+                        <span><a href="{{ url:site }}blog/tagged/{{ keyword }}">{{ keyword }}</a></span>
+                    {{ /keywords }}
+                </div>
+                {{ endif }}
+
 			</div>
 
-			{{ if category }}
-			<div class="category">
-				{{ helper:lang line="blog:category_label" }}
-				<span><a href="{{ url:site }}blog/category/{{ category:slug }}">{{ category:title }}</a></span>
-			</div>
-			{{ endif }}
-
-			{{ if keywords }}
-			<div class="keywords">
-				{{ keywords }}
-					<span><a href="{{ url:site }}blog/tagged/{{ keyword }}">{{ keyword }}</a></span>
-				{{ /keywords }}
-			</div>
-			{{ endif }}
-
-			</div>
-
-			<div class="preview">
-			{{ preview }}
+			<div class="preview clearfix">
+            {{ if cover }}
+    			<img class="left" data-pyroimage="true" src="uploads/default/files/{{ cover:filename }}" style="width:180px; height:auto; margin:0 10px 10px 0;" />
+            {{ endif }}
+            <p>{{ preview }}</p>
 			</div>
 
 			<p><a href="{{ url }}">{{ helper:lang line="blog:read_more_label" }}</a></p>
