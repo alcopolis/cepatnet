@@ -1,0 +1,6 @@
+@import 'reset.css';
+@import 'typo.css';
+@import 'global.css';
+
+article a:hover{color: #FC0}
+.post article h1, .post article h2, .post article h3, .post article h4, .post article h5, .post article h6{padding:0 0 10px 0;}

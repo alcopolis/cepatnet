@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{ theme:partial name="metadata-retail" }}
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>  
+</head>
+<body>
+    {{ integration:analytics }}
+    
+    <div id="header">
+    	<div class="wrapper">
+        	{{ theme:partial name="header" }}
+        </div>
+    </div> 
+    
+    <div id="banner" style="width:100%; height:280px; background:#FFF">
+    
+    </div>
+    
+    <div id="main">
+    	<div class="wrapper">
+        	{{ theme:partial name="content-retail" }}
+        </div>
+    </div> 
+    
+   <div id="footer" style="background:#0c223f;">
+    	<div class="wrapper">
+        	{{ theme:partial name="footer" }}
+        </div>
+        <p style="text-align:center">&copy;{{ helper:date format="Y" }} {{ settings:site_name }}. {{ helper:lang line="all_right_reserved" }}</p>
+    </div>     
+</body>
+</html>

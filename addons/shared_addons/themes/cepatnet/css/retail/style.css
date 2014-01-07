@@ -1,0 +1,7 @@
+@import '../reset.css';
+@import '../typo.css';
+@import '../global.css';
+
+section.post{background:none}
+section.post img{border:none; width:100%;}
+img.alignment-left{float:left; width:auto;}

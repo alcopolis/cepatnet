@@ -1,0 +1,25 @@
+@import '../reset.css';
+@import '../typo.css';
+@import '../global.css';
+
+.corp-prod-content{background:#EFEFEF; padding:0 20px 20px 20px;}
+
+.addthis_toolbox
+{
+	width:80px;
+	margin:0 auto;
+	/*background:#CCC;*/
+}
+
+section.post{text-shadow:none; min-height:280px;}
+section.post, section.post h1, section.post h2, section.post h3, section.post h4, section.post h5, section.post h6{color:#163F75;}
+section.post h1, section.post h2, section.post h3, section.post h4, section.post h5, section.post h6{padding:0;}
+section.post ol, section.post ul{margin-left:30px;}
+li{list-style-position: outside;}
+section.post #ack{
+	margin:40px 10px 0 0;
+	padding:0;
+	text-align:right;
+	color:#999;
+	border-top:1px dotted #CCC;
+}
