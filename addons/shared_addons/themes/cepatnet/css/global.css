@@ -9,12 +9,12 @@ body {
 	background: -ms-linear-gradient(top,  #08132d 0%,#163f75 66%); /* IE10+ */
 	background: linear-gradient(to bottom,  #08132d 0%,#163f75 66%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#08132d', endColorstr='#163f75',GradientType=0 ); /* IE6-9 */
-
+	width:100%;
 }
 
 #main{
-	/*width:100%;
-	background:url(../img/body-bg.png) no-repeat center center;
+	width:100%;
+	/*background:url(../img/body-bg.png) no-repeat center center;
 	background-size:auto 100%;*/
 }
 
@@ -28,7 +28,7 @@ body {
 /* Logo */
 
 #header{
-	 background:#F00; border-bottom:1px solid #0C223f;
+	 background:#F00; border-bottom:1px solid #0C223f; width:100%;
 }
 
 /* Site Logo */
@@ -98,7 +98,7 @@ nav ul#head-nav ul ul { left: 156px; top:-1px; width:149px; padding-top: 0; }
 
 
 
-nav{width:auto; float:right}
+nav{float:right; position:relative; z-index:10}
 
 nav ul#main-nav li{
 	float:left;
@@ -178,7 +178,7 @@ ul#main-nav li.has_children ul.dropdown li ul.dropdown li:hover a{
 
 
 /* ================================================================= Breadcrumbs ================================================================ */
-.breadcrumbs { font-family:  Tahoma, "Helvetica Neue", Helvetica, sans-serif; font-size: 11px; font-weight: normal; color: #999; background:#FFF; margin:0; padding:5px 0;}
+.breadcrumbs { font-family:  Tahoma, "Helvetica Neue", Helvetica, sans-serif; font-size: 11px; font-weight: normal; color: #999; background:none; margin:0; padding:5px 0;}
 .breadcrumbs a:hover { text-decoration: underline; }
 
 /* Content */
@@ -271,7 +271,7 @@ form#activate-user ul li input[type=text] { margin: 0 500px 15px 0; }
 form#activate-user ul li input[type=text] { background-color: #e8e8e8; border: 1px solid #fbfbfb; border-radius: 3px; -o-border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; padding: 5px 15px 5px 15px; font-family:  Tahoma, "Helvetica Neue", Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #7d7d7d; letter-spacing: 0.5px; text-shadow: 1px 1px 0px #fbfbfb; margin: 0 500px 0 0; }
 
 /* Footer */
-footer { font-size: 12px; color: #7d7d7d; letter-spacing: 0.5px; text-shadow: none; font-weight: bold; width: 1000px; margin: 0 auto; padding: 55px 0 0 0; }
+footer { font-size: 12px; color: #7d7d7d; letter-spacing: 0.5px; text-shadow: none; font-weight: bold; width: auto; margin: 0 auto; padding: 55px 0 0 0; }
 #footerWrapper { background-color: #f9f9f9; border-top: 1px solid #d1d1d1; width: 100%; height: 150px; margin: 0 auto; float: left; }
 
 /* Footer Powered By */
@@ -353,4 +353,4 @@ aside .widget ul { margin-left: 30px; }
 .left{float:left}
 .right{float:right}	
 .clear{clear:both;}
-.clearfix:after, .wrapper:after{content: "."; display: block; height: 0; clear: both;  visibility: hidden;}
+.wrapper:after{content: "."; display: block; height: 0; clear: both;  visibility: hidden;}

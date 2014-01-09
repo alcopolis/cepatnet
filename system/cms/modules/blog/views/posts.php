@@ -1,6 +1,6 @@
-{{ if posts }}
+{{ if blog:posts }}
 
-	{{ posts }}
+	{{ blog:posts category="events|main-banner" }}
 
 		<article class="post">
 
@@ -41,7 +41,7 @@
 
 		</article>
 
-	{{ /posts }}
+	{{ /blog:posts }}
 
 	{{ pagination }}
 

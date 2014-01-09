@@ -34,7 +34,7 @@ class Admin extends Admin_Controller
 		array(
 			'field' => 'body',
 			'label' => 'lang:blog:content_label',
-			'rules' => 'trim|required'
+			'rules' => 'trim'
 		),
 		array(
 			'field' => 'type',

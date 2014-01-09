@@ -2,7 +2,7 @@
 @import '../typo.css';
 @import '../global.css';
 
-.corp-prod-content{background:#EFEFEF; padding:0 20px 20px 20px;}
+.corp-prod-content{background:#EFEFEF; padding:0 0 20px 0;}
 
 .addthis_toolbox
 {

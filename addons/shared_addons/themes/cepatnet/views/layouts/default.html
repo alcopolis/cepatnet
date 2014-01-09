@@ -8,18 +8,20 @@
     {{ integration:analytics }}
     
     <div id="header">
-    	<div class="wrapper">
+    	<div class="wrapper clearfix">
         	{{ theme:partial name="header" }}
         </div>
     </div> 
     
-    <div id="banner" style="width:100%; height:360px; background:#FFF">
-    	<img src="http://www.cepat.net.id/images/xmas-2013.jpg" style="width:100%"/>
-    </div>
+    <div id="main-banner" class="orbit-slider" style="width:980px; height:300px; margin:0 auto; padding:0;">
+        {{ blog:posts category="main-banner" }}
+        	<!--<div><a href="corporate/{{ slug }}"><img src="uploads/default/files/{{ cover:filename }}" style="width:100%; margin:0; padding:0; border:none;" /></a></div>-->
+            <div style="width:100%; margin:0; padding:0; background:url({{url:base}}uploads/default/files/{{ cover:filename }}) no-repeat center center; background-size:100% auto;"><a href="corporate/{{ slug }}" style="display:block; width:980px; height:300px;" ></a></div>
+        {{ /blog:posts }}
+    </div> 
     
     <div id="main">
-    	
-        <div id="util" style="background:#FFF; margin:9px 0 0 0">
+        <div id="util" style="background:#111; margin:1px 0 0 0">
             {{ if page:is_home == false }}
                 <div class="wrapper clearfix">
                     {{ theme:partial name="breadcrumbs" }}
@@ -34,9 +36,12 @@
     </div>
     
     {{ if page:is_home == true }}
-        <div style="background:#EEE; height:300px; position:relative;">
-            <section id="clients" class="wrapper clearfix">
+        <div style="background:#FFF; padding:20px 0; position:relative;">
+            <section id="customers" class="wrapper clearfix">
                 <h6 style="text-align:center; color:#999; font-weight:normal; background:#000; position:relative; top:-10px;">Our Customers</h6>
+                {{ blog:posts category="customers" }}
+        			<img src="uploads/default/files/{{ cover:filename }}" style="width:100px; margin:0; padding:0; border:none;" title="{{ title }}" />
+                {{ /blog:posts }}
             </section>
         </div> 
     {{ endif }}
@@ -46,6 +51,6 @@
         	{{ theme:partial name="footer" }}
         </div>
         <p id="copy" style="text-align:center; padding-top:10px; font-size:11px; color:rgba(255,255,255,.25); border-top:1px solid rgba(255,255,255,.1);">&copy;{{ helper:date format="Y" }} {{ settings:site_name }}. {{ helper:lang line="all_right_reserved" }}</p>
-    </div>    
+    </div>
 </body>
 </html>

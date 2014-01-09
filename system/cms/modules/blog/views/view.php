@@ -36,7 +36,7 @@
 	</div>
 
 	<div class="body">
-    	{{ if {cover:filename} != '' }}
+    	{{ if cover:filename }}
     		<img class="left" data-pyroimage="true" src="uploads/default/files/{{ cover:filename }}" style="width:360px; height:auto; margin:0 10px 10px 0;" />
         {{ endif }}
 		{{ body }}
