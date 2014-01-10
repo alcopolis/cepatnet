@@ -61,8 +61,11 @@ class Blog extends Public_Controller
 			'namespace'		=> 'blogs',
 			'limit'			=> Settings::get('records_per_page'),
 			'where'			=> "`status` = 'live'",
+			
+			//Select by category where category not customers and main banner
+			'where'			=> '`category_id` NOT IN (2,3)',
 			'paginate'		=> 'yes',
-			'pag_base'		=> site_url('blog/page'),
+			'pag_base'		=> site_url('news/page'),
 			'pag_segment'   => 3
 		);
 		$posts = $this->streams->entries->get_entries($params);
@@ -106,7 +109,7 @@ class Blog extends Public_Controller
 	 */
 	public function category($slug = '')
 	{
-		$slug or redirect('blog');
+		$slug or redirect('news');
 
 		// Get category data
 		$category = $this->blog_categories_m->get_by('slug', $slug) OR show_404();

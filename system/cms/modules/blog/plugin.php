@@ -13,7 +13,7 @@ class Plugin_Blog extends Plugin
 	public $version = '1.0.0';
 	public $name = array(
 		'en' => 'Blog',
-            'fa' => 'بلاگ',
+        'fa' => 'بلاگ',
 	);
 	public $description = array(
 		'en' => 'A plugin to display information such as blog categories and posts.',

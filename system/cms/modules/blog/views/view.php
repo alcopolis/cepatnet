@@ -1,5 +1,3 @@
-
-
 {{ post }}
 
 <article class="post">
