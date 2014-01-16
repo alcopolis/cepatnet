@@ -1,14 +1,6 @@
 /* Let's begin! */
 body { 
 	/*background-color: #e1e1e1; background-image: url(../img/body-bg.jpg); background-repeat: repeat-x; overflow-x: hidden; */
-	background: #08132d; /* Old browsers */
-	background: -moz-linear-gradient(top,  #08132d 0%, #163f75 66%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#08132d), color-stop(66%,#163f75)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #08132d 0%,#163f75 66%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #08132d 0%,#163f75 66%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #08132d 0%,#163f75 66%); /* IE10+ */
-	background: linear-gradient(to bottom,  #08132d 0%,#163f75 66%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#08132d', endColorstr='#163f75',GradientType=0 ); /* IE6-9 */
 	width:100%;
 }
 
@@ -16,6 +8,17 @@ body {
 	width:100%;
 	/*background:url(../img/body-bg.png) no-repeat center center;
 	background-size:auto 100%;*/
+	
+	/*
+	background: #08132d;
+	background: -moz-linear-gradient(top,  #08132d 0%, #163f75 66%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#08132d), color-stop(66%,#163f75));
+	background: -webkit-linear-gradient(top,  #08132d 0%,#163f75 66%);
+	background: -o-linear-gradient(top,  #08132d 0%,#163f75 66%);
+	background: -ms-linear-gradient(top,  #08132d 0%,#163f75 66%); 
+	background: linear-gradient(to bottom,  #08132d 0%,#163f75 66%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#08132d', endColorstr='#163f75',GradientType=0 ); /* IE6-9 */
+	*/
 }
 
 /* Wrappers */
@@ -187,8 +190,8 @@ img{border:none;}
 #content { width: 720px; min-height: 500px; padding: 15px 0 150px 0; margin: 0; float: left; }
 #full-content { width: 100%; min-height: 500px; padding: 80px 0 80px 0; margin: 0; float: left; }
 
-section.post { padding: 20px; border: 0 solid #ffffff; color: #FFF; font-size: 14px; }
-section.post h1, .post h2, .post h3, .post h4, .post h5, .post h6 { padding: 0 0 25px 0; color: #EFEFEF; }
+section.post { padding: 20px; border: 0 solid #ffffff; color: #333; font-size: 14px;}
+section.post h1, .post h2, .post h3, .post h4, .post h5, .post h6 { padding: 0 0 25px 0; color: #F00; }
 section.post ul { padding: 0 0 0 25px; }
 section.post img { margin: 10px 0 10px 0; border: 3px solid #cfcfcf; }
 section.blog_article { padding: 15px 0 15px 0; border-bottom: 1px dashed #cfcfcf; }
