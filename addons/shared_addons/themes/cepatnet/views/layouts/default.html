@@ -38,7 +38,7 @@
     {{ if page:is_home == true }}
         <div style="background:#FFF; padding:20px 0; position:relative;">
             <section id="customers" class="wrapper clearfix">
-                <h6 style="text-align:center; color:#999; font-weight:normal; background:#000; position:relative; top:-10px;">Our Customers</h6>
+                <h6 style="text-align:left; padding:0 5px; border-left:5px solid #CCC; color:#CCC; font-weight:normal; position:relative; top:-60px; margin-bottom:0">Our Customers</h6>
                 {{ blog:posts category="customers" }}
         			<img src="uploads/default/files/{{ cover:filename }}" style="width:100px; margin:0; padding:0; border:none;" title="{{ title }}" />
                 {{ /blog:posts }}
@@ -47,10 +47,16 @@
     {{ endif }}
     
     <div id="footer" style="background:#0c223f;">
-    	<div class="wrapper">
-        	{{ theme:partial name="footer" }}
-        </div>
-        <p id="copy" style="text-align:center; padding-top:10px; font-size:11px; color:rgba(255,255,255,.25); border-top:1px solid rgba(255,255,255,.1);">&copy;{{ helper:date format="Y" }} {{ settings:site_name }}. {{ helper:lang line="all_right_reserved" }}</p>
+    	
+        <p id="copy" style="text-align:center; padding-top:10px; font-size:11px; color:rgba(255,255,255,.25); border-top:1px solid rgba(255,255,255,.1);">&copy;{{ helper:date format="Y" }} {{ settings:site_name }}. {{ helper:lang line="all_right_reserved" }} <a class="last" href="{{ url:current }}#top" title="{{ helper:lang line="back_to_top" }}">{{ helper:lang line="top_page" }} &uarr;</a></p>
     </div>
+    
+    <!-- Begin scripts -->
+{{ theme:js file="main.js" }}
+{{ theme:js file="localscroll.js" }}
+{{ theme:js file="scrollto.js" }}
+{{ theme:js file="easing.js" }}
+{{ theme:js file="global.js" }}
+<!-- End scripts -->
 </body>
 </html>
