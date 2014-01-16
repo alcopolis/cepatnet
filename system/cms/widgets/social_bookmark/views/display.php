@@ -1,4 +1,4 @@
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js"></script>
 
 <?php if ($mode == 'two_column'): ?>
 
