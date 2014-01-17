@@ -42,9 +42,8 @@
 		</article>
 
 	{{ /posts }}
-
-	{{ pagination }}
-
+	
+	<div style="background:#000;">{{ pagination }}</div>
 {{ else }}
 	
 	{{ helper:lang line="blog:currently_no_posts" }}
