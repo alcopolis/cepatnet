@@ -187,10 +187,10 @@ ul#main-nav li.has_children ul.dropdown li ul.dropdown li:hover a{
 /* Content */
 img{border:none;}
 
-#content { width: 720px; min-height: 500px; padding: 15px 0 150px 0; margin: 0; float: left; }
+#content { width: 720px; padding: 20px 0 20px 0; margin: 0; float: left; }
 #full-content { width: 100%; min-height: 500px; padding: 80px 0 80px 0; margin: 0; float: left; }
 
-section.post { padding: 20px; border: 0 solid #ffffff; color: #333; font-size: 14px;}
+section.post { padding: 20px 0; border: 0 solid #ffffff; color: #333; font-size: 14px;}
 section.post h1, .post h2, .post h3, .post h4, .post h5, .post h6 { padding: 0 0 25px 0; color: #F00; }
 section.post ul { padding: 0 0 0 25px; }
 section.post img { margin: 10px 0 10px 0; border: 3px solid #cfcfcf; }
@@ -357,3 +357,14 @@ aside .widget ul { margin-left: 30px; }
 .right{float:right}	
 .clear{clear:both;}
 .wrapper:after{content: "."; display: block; height: 0; clear: both;  visibility: hidden;}
+
+.bg-grad-grey{
+	background: #aaaaaa; /* Old browsers */
+	background: -moz-linear-gradient(top,  #aaaaaa 0%, #dddddd 35%, #eeeeee 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#aaaaaa), color-stop(35%,#dddddd), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #aaaaaa 0%,#dddddd 35%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #aaaaaa 0%,#dddddd 35%,#eeeeee 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #aaaaaa 0%,#dddddd 35%,#eeeeee 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #aaaaaa 0%,#dddddd 35%,#eeeeee 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaaaaa', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+}
