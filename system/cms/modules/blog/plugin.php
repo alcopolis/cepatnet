@@ -340,13 +340,15 @@ class Plugin_Blog extends Plugin
 	public function count_posts()
 	{
 		$wheres = $this->attributes();
-
+		
 		// make sure they provided a where clause
 		if (count($wheres) == 0) return false;
 
 		foreach ($wheres as $column => $value)
 		{
-			$this->db->where($column, $value);
+			if($column != 'parse_params'){
+				$this->db->where($column, $value);
+			}
 		}
 
 		return $this->db->count_all_results('blog');

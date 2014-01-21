@@ -2,11 +2,13 @@
 @import '../typo.css';
 @import '../global.css';
 
-.corp-prod-content{background:#EFEFEF; padding:0 0 20px 0;}
+#main{background:#EFEFEF;}
+.corp-prod-content{padding:0 0 20px 0;}
 
 .addthis_toolbox
 {
-	width:80px;
+	width:184px;
+	text-align:center;
 	margin:0 auto;
 	/*background:#CCC;*/
 }

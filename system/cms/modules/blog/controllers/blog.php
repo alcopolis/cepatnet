@@ -48,7 +48,7 @@ class Blog extends Public_Controller
 	 * URIs such as `blog/page/x` also route here.
 	 */
 	public function index()
-	{
+	{		
 		// Get our comment count whil we're at it.
 		$this->row_m->sql['select'][] = "(SELECT COUNT(id) FROM ".
 				$this->db->protect_identifiers('comments', true)." WHERE module='blog'
@@ -59,7 +59,8 @@ class Blog extends Public_Controller
 		$params = array(
 			'stream'		=> 'blog',
 			'namespace'		=> 'blogs',
-			'limit'			=> Settings::get('records_per_page'),
+			//'limit'			=> Settings::get('records_per_page'),
+			'limit'			=> 2,
 			'where'			=> "`status` = 'live'",
 			
 			//Select by category where category not customers and main banner

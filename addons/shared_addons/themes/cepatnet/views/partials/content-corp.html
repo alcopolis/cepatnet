@@ -1,14 +1,17 @@
 <div id="full-content">
 	<div class="corp-prod-content clearfix" style="border-radius:0">
-    	<div style="width:220px; margin-right:20px; float:left; position:relative; display:block; text-align:center;">
-           	<div style="font-size:14px; margin:60px 0 10px 0; color:#666; text-shadow:0 -1px 0 #FFF">Share</div>
-            {{ widgets:instance id="3"}} 
+    	<div style="width:220px; margin:0 10px; float:left; position:relative; display:block; text-align:center;">
+           	<!--<div style="font-size:14px; margin:60px 0 10px 0; color:#666; text-shadow:0 -1px 0 #FFF">Share</div>-->
+            <div style="margin-top:60px; font-family:sans-serif; font-size:12px; color:#999">
+                Share
+                {{ widgets:instance id="3"}} 
+            </div>
            
-            <img src="{{theme:image_path}}hotline.png" title="Hotline 31998600" style="margin-top:80px;"/>
+            <img src="{{theme:image_path}}hotline.png" title="Hotline 31998600" style="margin-top:60px;"/>
         	<p style="color:#999; font-size:12px; margin-bottom:30px">Please Call For More Info</p>
         </div> 
         
-        <section class="post clearfix" style="width:638px; float:left; box-shadow:0 2px 10px rgba(0,0,0,.25); border-radius:0 0 20px 20px;">
+        <section class="post clearfix" style="width:638px; float:left;">
 			<h1>{{ page:title }}</h1>
             {{ template:body }}
         </section>
