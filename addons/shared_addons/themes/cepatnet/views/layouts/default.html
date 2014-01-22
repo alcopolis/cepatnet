@@ -19,7 +19,7 @@
     </div> 
     
     <div id="main-banner" class="orbit-slider" style="width:960px; height:290px; margin:0 auto; padding:0;">
-        {{ blog:posts category="main-banner" }}
+        {{ blog:posts category="corporate|promo" order-dir="random" limit="3" }}
         	<!--<div><a href="corporate/{{ slug }}"><img src="uploads/default/files/{{ cover:filename }}" style="width:100%; margin:0; padding:0; border:none;" /></a></div>-->
             <div style="width:100%; margin:0; padding:0; background:url({{url:base}}uploads/default/files/{{ cover:filename }}) no-repeat center center; background-size:100% auto;"><a href="corporate/{{ slug }}" style="display:block; width:980px; height:300px;" ></a></div>
         {{ /blog:posts }}

@@ -3,6 +3,9 @@
 @import '../global.css';
 
 #main{background:#EFEFEF;}
+
+#full-content{padding:20px 0 0 0}
+
 .corp-prod-content{padding:0 0 20px 0;}
 
 .addthis_toolbox

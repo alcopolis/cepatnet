@@ -1,7 +1,9 @@
 <div id="full-content">
-	<div class="corp-prod-content clearfix" style="border-radius:0">
+	
+	<div style="margin:0; padding:0;"><img src="uploads/default/files/{{ page:corp_poster:filename }}" /></div>
+	
+    <div class="corp-prod-content clearfix" style="border-radius:0">
     	<div style="width:220px; margin:0 10px; float:left; position:relative; display:block; text-align:center;">
-           	<!--<div style="font-size:14px; margin:60px 0 10px 0; color:#666; text-shadow:0 -1px 0 #FFF">Share</div>-->
             <div style="margin-top:60px; font-family:sans-serif; font-size:12px; color:#999">
                 Share
                 {{ widgets:instance id="3"}} 
@@ -12,8 +14,8 @@
         </div> 
         
         <section class="post clearfix" style="width:638px; float:left;">
-			<h1>{{ page:title }}</h1>
-            {{ template:body }}
+            <!--<h1>{{ page:title }}</h1>-->
+            {{ page:corp_body }}
         </section>
 	</div>
 </div>
