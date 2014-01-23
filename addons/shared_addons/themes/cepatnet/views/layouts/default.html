@@ -19,11 +19,19 @@
     </div> 
     
     <div id="main-banner" class="orbit-slider" style="width:960px; height:290px; margin:0 auto; padding:0;">
-        {{ blog:posts category="corporate|promo" order-dir="random" limit="3" }}
-        	<!--<div><a href="corporate/{{ slug }}"><img src="uploads/default/files/{{ cover:filename }}" style="width:100%; margin:0; padding:0; border:none;" /></a></div>-->
-            <div style="width:100%; margin:0; padding:0; background:url({{url:base}}uploads/default/files/{{ cover:filename }}) no-repeat center center; background-size:100% auto;"><a href="corporate/{{ slug }}" style="display:block; width:980px; height:300px;" ></a></div>
+        {{ blog:posts category="promo" order-dir="random" limit="2" }}
+            <div style="width:100%; margin:0; padding:0; background:url({{url:base}}uploads/default/files/{{ cover:filename }}) no-repeat center center; background-size:100% auto;">
+            	<a href="corporate/{{ slug }}" style="display:block; width:980px; height:300px;" ></a>
+            </div>
         {{ /blog:posts }}
+        
+        {{ pages:children id="6" order-dir="random" limit="5" }}
+             <div style="width:100%; margin:0; padding:0; background:url({{url:base}}uploads/default/files/{{ custom_fields }}{{ corp_poster:filename }}{{ /custom_fields }}) no-repeat center center; background-size:100% auto;">
+                <a href="corporate/{{ slug }}" style="display:block; width:980px; height:300px;" ></a>
+             </div>
+        {{ /pages:children }}
     </div> 
+        
     
     <div id="main">
         <div id="util" style="background:#EEE; margin:1px 0 0 0">
@@ -34,7 +42,6 @@
                 </div>
             {{ endif }}
         </div>   
-        	
     	<div class="wrapper">
             {{ theme:partial name="content" }}
         </div>

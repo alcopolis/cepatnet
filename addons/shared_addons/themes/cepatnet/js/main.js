@@ -17,3 +17,25 @@ $(document).ready(function() {
 	
 	centerOrbitNav();
 });
+
+$(window).resize(function() {
+	centerOrbitNav();
+	setLayout();
+});
+
+function setLayout(){
+	var winW = $(window).width();
+	if(winW <= 960){
+		$('#header, #footer, #util').width(960);
+	}else{
+		$('#header, #footer, #util').css('width', '100%');
+	}
+}
+
+function centerOrbitNav(){
+	var navW = $('.orbit-bullets').width();
+	var winW = $(window).width();
+	var centerPos = Math.floor((winW - navW)/2);
+	
+	$('.orbit-bullets').css('left', centerPos + 'px');
+}

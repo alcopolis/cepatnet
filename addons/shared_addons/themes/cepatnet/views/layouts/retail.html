@@ -13,13 +13,14 @@
         </div>
     </div> 
     
-    {{ if {blog:count_posts category_id="1" > 0} }}
-    <div id="banner" style="width:100%; height:280px; background:#FFF">
-    	{{ blog:posts category="promo" order-dir="random" limit="3" }}
-        	<!--<div><a href="corporate/{{ slug }}"><img src="uploads/default/files/{{ cover:filename }}" style="width:100%; margin:0; padding:0; border:none;" /></a></div>-->
-            <div style="width:100%; margin:0; padding:0; background:url({{url:base}}uploads/default/files/{{ cover:filename }}) no-repeat center center; background-size:100% auto;"><a href="corporate/{{ slug }}" style="display:block; width:980px; height:300px;" ></a></div>
-        {{ /blog:posts }}
-    </div>
+    {{ if {blog:count_posts category_id="6" > 0} }}
+        <div id="main-banner" class="orbit-slider" style="width:960px; height:290px; margin:0 auto; padding:0;">
+            {{ blog:posts category="retail" order-dir="random" limit="5" }}
+                <div style="width:100%; margin:0; padding:0; background:url({{url:base}}uploads/default/files/{{ cover:filename }}) no-repeat center center; background-size:100% auto;">
+                    <a href="{{ slug }}" style="display:block; width:980px; height:300px;" ></a>
+                </div>
+            {{ /blog:posts }}
+        </div>
     {{ endif }}
     
     <div id="main">

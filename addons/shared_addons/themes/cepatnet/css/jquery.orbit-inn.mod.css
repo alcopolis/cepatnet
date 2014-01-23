@@ -179,12 +179,12 @@ div.slider-nav span.left {
     position: absolute;
     z-index: 1000;
     list-style: none;
-    bottom:0px;
-    left: 50%;
-	margin-left: -50px;
+    bottom:10px;
+    /*left: 50%;
+	margin-left: -50px;*/
     padding: 0;
-	background:#FFF;
-	border-radius:10px 10px 0 0;
+	background:rgba(0,0,0,.85);
+	border-radius:10px;
  	/*box-shadow:0 0 2px #000; */
 }
 
@@ -195,7 +195,7 @@ div.slider-nav span.left {
     cursor: pointer;
     color: #999;
     text-indent: -9999px;
-    background: url(orbit/bullets.jpg) no-repeat 4px 5px;
+    background: url(orbit/bullets.png) no-repeat 4px 5px;
     width: 13px;
     height: 12px;
     overflow: hidden;
