@@ -57,7 +57,11 @@ $route['edit-profile']	                    = 'users/edit';
 
 $route['sitemap.xml']                       = 'sitemap/xml';
 
+
+//Custom route
 $route['news']                       		= 'blog';
 $route['news/(:any)']                       = 'blog/$1';
+
+
 
 /* End of file routes.php */

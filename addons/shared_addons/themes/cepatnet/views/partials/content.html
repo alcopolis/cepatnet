@@ -3,10 +3,10 @@
 	<div id="full-content">
 {{ else }}
 	<!-- Begin 2 column content -->
-	<div id="content" style="width:840px;">
+	<div id="content" style="width:840px; background:#FFF; margin:40px 0; box-shadow:0 0 30px #CCC;">
 {{ endif }}
     {{ session:messages success="success-box" notice="notice-box" error="error-box" }}
-	<section class="post clearfix">
+	<section class="post clearfix" style="margin:0 20px;">
 		{{ template:body }}
 	</section>
 </div>

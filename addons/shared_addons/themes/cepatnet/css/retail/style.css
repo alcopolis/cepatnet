@@ -2,6 +2,8 @@
 @import '../typo.css';
 @import '../global.css';
 
-section.post{background:none}
+#full-content{padding:20px 0 0 0}
+
+section.post{background:none; padding:0;}
 section.post img{border:none; width:100%;}
 img.alignment-left{float:left; width:auto;}

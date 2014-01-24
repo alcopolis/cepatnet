@@ -270,11 +270,13 @@ class Plugin_Blog extends Plugin
 				$post['keywords_arr'] = $keywords_arr;
 
 				// Full URL for convenience.
-				$post['url'] = site_url('blog/'.date('Y/m', $post['created_on']).'/'.$post['slug']);
+				$post['url'] = site_url('news/'.date('Y/m', $post['created_on']).'/'.$post['slug']);
 			
 				// What is the preview? If there is a field called intro,
 				// we will use that, otherwise we will cut down the blog post itself.
-				$post['preview'] = (isset($post['intro'])) ? $post['intro'] : $post['body'];
+				
+				//$post['preview'] = (isset($post['intro'])) ? $post['intro'] : $post['body'];
+				$post['preview'] = (isset($post['intro'])) ? substr($post['intro'],0,160) . '...' : substr($post['body'],0,160) . '...';
 			}
 		}
 		
@@ -320,7 +322,7 @@ class Plugin_Blog extends Plugin
 
 		foreach ($categories as &$category)
 		{
-			$category->url = site_url('blog/category/'.$category->slug);
+			$category->url = site_url('news/category/'.$category->slug);
 		}
 		
 		return $categories;
@@ -392,7 +394,7 @@ class Plugin_Blog extends Plugin
 
 					$tags[] = array(
 						'title' => ucfirst($k),
-						'url'   => site_url('blog/tagged/'.$k)
+						'url'   => site_url('news/tagged/'.$k)
 					);
 				}
 			}

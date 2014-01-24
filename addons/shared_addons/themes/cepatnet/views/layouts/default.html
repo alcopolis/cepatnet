@@ -34,7 +34,7 @@
         
     
     <div id="main">
-        <div id="util" style="background:#EEE; margin:1px 0 0 0">
+        <div id="util" style="background:#DEDEDE; margin:1px 0 0 0">
             {{ if page:is_home == false }}
                 <div class="wrapper clearfix">
                     {{ theme:partial name="breadcrumbs" }}
@@ -59,7 +59,6 @@
     {{ endif }}
     
     <div id="footer" style="background:#0c223f;">
-    	
         <p id="copy" style="text-align:center; padding-top:10px; font-size:11px; color:rgba(255,255,255,.25); border-top:1px solid rgba(255,255,255,.1);">&copy;{{ helper:date format="Y" }} {{ settings:site_name }}. {{ helper:lang line="all_right_reserved" }} <a class="last" href="{{ url:current }}#top" title="{{ helper:lang line="back_to_top" }}">{{ helper:lang line="top_page" }} &uarr;</a></p>
     </div>
     
