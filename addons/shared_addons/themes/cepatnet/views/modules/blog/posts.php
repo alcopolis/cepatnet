@@ -12,7 +12,7 @@
                     <span>{{ helper:date timestamp=created_on }}</span>
                 </div>
     
-                {{ if category }}
+                {{ if category and category:slug != "news" }}
                 <div class="category">
                     {{ helper:lang line="blog:category_label" }}
                     <span><a href="{{ url:site }}news/category/{{ category:slug }}">{{ category:title }}</a></span>
@@ -41,7 +41,7 @@
         </article>
     {{ /posts }}
     
-    <div style="background:#000;">{{ pagination }}</div>
+    {{ pagination }}
 	
 {{ else }}
 	

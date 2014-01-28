@@ -50,10 +50,13 @@
     {{ if page:is_home == true }}
         <div style="padding:0 0 20px 0; position:relative;">
             <section id="customers" class="wrapper clearfix">
-                <h6 style="text-align:left; padding-left:2px; border-left:5px solid #F00; color:#CCC; font-weight:normal; position:relative; top:0px; margin-bottom:10px"><span style="display:block; width:240px;background:#F00; color:#FFF; margin:0; padding:0 10px;">Our Customers</span></h6>
-                {{ blog:posts category="customers" }}
-        			<img src="uploads/default/files/{{ cover:filename }}" style="width:100px; margin:0; padding:0; border:none;" title="{{ title }}" />
+               <!-- <h6 style="text-align:left; padding-left:2px; border-left:5px solid #F00; color:#CCC; font-weight:normal; position:relative; top:0px; margin-bottom:10px"><span style="display:block; width:240px;background:#F00; color:#FFF; margin:0; padding:0 10px;">Our Customers</span></h6>-->
+                <h6 style="text-align:center; color:#CCC; font-weight:normal; text-shadow:0 -1px 0 #999; margin-top:10px">Our Customers</h6>
+                <div style="margin:30px auto 20px auto; width:860px">
+                {{ blog:posts category="customers" order-dir="random" limit="6" }}
+        			<img src="uploads/default/files/{{ cover:filename }}" style="width:100px; margin:0 20px; padding:0; border:none;" title="{{ title }}" />
                 {{ /blog:posts }}
+                </div>
             </section>
         </div> 
     {{ endif }}

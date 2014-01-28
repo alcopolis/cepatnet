@@ -348,6 +348,17 @@ aside .widget ul { margin-left: 30px; }
 .clear{clear:both;}
 .wrapper:after{content: "."; display: block; height: 0; clear: both;  visibility: hidden;}
 
+
+/* Default Layout */
+#content{
+	width:720px;
+	background:#FFF;
+	margin:40px 0;
+	box-shadow:0 0 30px #CCC;	
+	padding:0;
+}
+
+
 .bg-grad-grey{
 	background: #aaaaaa; /* Old browsers */
 	background: -moz-linear-gradient(top,  #aaaaaa 0%, #dddddd 35%, #eeeeee 100%); /* FF3.6+ */
@@ -357,4 +368,25 @@ aside .widget ul { margin-left: 30px; }
 	background: -ms-linear-gradient(top,  #aaaaaa 0%,#dddddd 35%,#eeeeee 100%); /* IE10+ */
 	background: linear-gradient(to bottom,  #aaaaaa 0%,#dddddd 35%,#eeeeee 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaaaaa', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+}
+
+
+/* === Pagination ==== */
+.pagination{background:#666; padding:10px}
+.pagination ul:before{
+	content: "Page >> ";
+	color:#CCC;
+}
+.pagination ul{
+	margin:0; padding:0 !important;
+}
+.pagination ul li{
+	list-style:none;
+	display:inline;
+	margin:0 .5em; padding:0;
+}
+.pagination ul li.active{
+	list-style:none;
+	display:inline;
+	margin:0 .5em; padding:0;
 }

@@ -1,4 +1,4 @@
-<aside style="margin-top:50px; padding:10px; width:80px; background:#EEE; border-radius:0px;">    
+<aside style="margin-top:50px; padding:10px; width:200px; background:#EEE; border-radius:0px;">    
 	
     {{ if page:is_home == false }}
 		{{ widgets:area slug="sidebar" }}
@@ -6,17 +6,14 @@
     
     <div id="quicklink" class="side-group">
 		<ul>
-			<li style="list-style:none;"><a href="homelinks/guide" title="Homelinks TV Guide"><img src="{{theme:image_path}}/icon/tv-guide.png" style="width:100%" /></a></li>
-            <li style="list-style:none;"><a href="homelinks/guide" title="Web Selfcare"><img src="{{theme:image_path}}/icon/tv-guide.png" style="width:100%" /></a></li>
-            <li style="list-style:none;"><a href="homelinks/guide" title="WiEye"><img src="{{theme:image_path}}/icon/tv-guide.png" style="width:100%" /></a></li>
-            <!--<li style="list-style:none;"><img src="http://cepat.net.id/images/jadwalTV.png" style="width:100%" /></li>
-            <li style="list-style:none;"><img src="http://cepat.net.id/images/selfcare.jpg" style="width:100%" /></li>
-            <li style="list-style:none;"><img src="http://cepat.net.id/images/wi-eye-banner.jpg" style="width:100%" /></li>-->
+			<li style="list-style:none;"><a href="homelinks/guide" title="Homelinks TV Guide"><img src="{{theme:image_path}}/jadwal-tv.png" style="width:100%; border-radius:5px;" /></a></li>
+            <li style="list-style:none;"><a href="register" title="Register"><img src="{{theme:image_path}}/register.png" style="width:100%; border-radius:5px;" /></a></li>
+            <li style="list-style:none;"><a href="selfcare.cepat.net.id" title="Web Selfcare"><img src="{{theme:image_path}}/selfcare.png" style="width:100%; border-radius:5px;" /></a></li>
 		</ul>
 	</div>
-    <!--<div id="ads" class="side-group" style="margin:20px 0">
+    <div id="ads" class="side-group" style="margin:20px 0">
 		<ul>
 			<li style="list-style:none;"><img src="http://cepat.net.id/images/promo-mgm-banner.jpg" style="width:100%" /></li>
 		</ul>
-	</div>-->
+	</div>
 </aside>

@@ -3,18 +3,20 @@
 @import 'global.css';
 
 
-#home article{
-	width:180px;
-	float:left;
-	margin:0 45px 0 0;
-	font-size:12px;
-	line-height:14px;
-}
-
-#home article:last-child{margin:0 0 0 0;}
 
 article > img {border:none !important;}
 article a:hover, article a:visited:hover{color: #FC0}
 .post article h1, .post article h2, .post article h3, .post article h4, .post article h5, .post article h6{margin:10px 0; padding:0; font-weight:normal; line-height:1em}
 
-#home section.post{padding:20px 0;}
+#home section.post{padding:0;}
+#home section.post img{margin:0;}
+
+#home article{
+	width:180px;
+	float:left;
+	margin:0 0 0 35px;
+	font-size:12px;
+	line-height:14px;
+}
+
+#home article:last-child{}

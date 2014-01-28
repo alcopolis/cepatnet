@@ -60,11 +60,11 @@ class Blog extends Public_Controller
 			'stream'		=> 'blog',
 			'namespace'		=> 'blogs',
 			//'limit'			=> Settings::get('records_per_page'),
-			'limit'			=> 2,
+			'limit'			=> 5,
 			'where'			=> "`status` = 'live'",
 			
 			//Select by category where category not customers and main banner
-			'where'			=> '`category_id` NOT IN (2,3)',
+			'where'			=> '`category_id` NOT IN (3)',
 			'paginate'		=> 'yes',
 			'pag_base'		=> site_url('news/page'),
 			'pag_segment'   => 3
@@ -416,6 +416,7 @@ class Blog extends Public_Controller
 	 */
 	private function _single_view($post)
 	{
+		
 		// if it uses markdown then display the parsed version
 		if ($post['type'] === 'markdown')
 		{
@@ -433,13 +434,16 @@ class Blog extends Public_Controller
 			// since we need an array.
 			if ($category = $this->db->limit(1)->where('id', $post['category_id'])->get('blog_categories')->row_array())
 			{
-				$this->template->set_breadcrumb($category['title'], 'news/category/'.$category['slug']);
-
-				// Set category OG metadata			
-				$this->template->set_metadata('article:section', $category['title'], 'og');
-
-				// Add to $post
-				$post['category'] = $category;
+				if($category['slug'] != 'news')
+				{
+					$this->template->set_breadcrumb($category['title'], 'news/category/'.$category['slug']);
+	
+					// Set category OG metadata			
+					$this->template->set_metadata('article:section', $category['title'], 'og');
+	
+					// Add to $post
+					$post['category'] = $category;
+				}
 			}
 		}
 
