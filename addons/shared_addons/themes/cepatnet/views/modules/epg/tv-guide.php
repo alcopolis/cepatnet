@@ -1,15 +1,27 @@
 <div style="margin:0 auto; width:960px;">
 	
-    <div class="sch-util" style="width:100%; margin:20px 0;">
-    	<img src="{{theme:image_path}}tv-guide.png" style="width:359px;">
+    <div id="sch-util">
+    	<img src="{{theme:image_path}}tv-guide.png" style="width:180px;">
     
-    	<p class="today"><?php echo date('d F Y'); ?></p>
-        <div class="sch-input">
-            <form method="post" action="epg">
-            	<?php echo form_dropdown('cid', $ch, set_value('cid', '1')); ?>
-            	
-                <input type="text" value="05-02-2014" id="date" name="date" class="hasDatepicker"><img class="ui-datepicker-trigger" src="images/calendar.png" alt="..." title="...">
-                <input type="submit" value="view">
+        <div id="sch-input">
+        	<p id="today"><?php echo date('d F Y'); ?></p>
+            <form id="sch-filter" class="clearfix" method="post" action="epg">                
+                <div class="filter">
+					<label for="cid">Channel</label>
+					<div class="input clearfix">
+						<?php echo form_dropdown('cid', $ch, '', 'id="cid"'); ?>
+					</div>
+				</div>
+				
+				<div class="filter">
+					<label for="date">Date</label>
+					<div class="input"><?php echo form_input('date', set_value('date', date("Y-m-d")), 'id="date" class="datepicker" maxlength="20"'); ?></div>
+				</div>
+				
+				<div class="filter">
+					<label for="submit">&nbsp;</label>
+					<?php echo form_submit('submit', 'View'); ?>
+				</div>
             </form>
         </div>
         <div style="clear:both;"></div>
