@@ -14,28 +14,30 @@
         <div style="clear:both;"></div>
     </div>
     
-    <div style="width:100%; background:#59A; margin:20px 0;">
-	    <?php if($shows){ ?>
-	    	<?php foreach($shows as $show){ ?>
-	    		<div style="margin:10px 0; background:#FFF; padding:20px;">
-	    			<h3><?php echo $show->ch->name; ?></h3>
-	    			<ul>
-	    		<?php if(!empty($show->sh)){ foreach($show->sh as $s){ ?>
-	    				<li>
-	    					<?php echo $s->time . ' | '; ?>
-	    					<?php echo $s->duration . '<br/>'; ?>
-	    					<?php echo $s->title . '<br/>'; ?>
-	    					<?php echo $s->syn_id . '<br/>'; ?>
-	    					<?php echo $s->syn_en . '<br/>'; ?>
-	    				</li>
-	    		<?php }}else{ echo 'No EPG Data'; } ?>
-	    			</ul>
-	    		</div>
-	    	<?php } ?>
-	    <?php }else{ ?>
-	    	tv guide home
-	    <?php } ?>	
-    </div>
+   
+   <?php if($shows){ ?> 
+   <table id="epg-tool" cellpadding="0" cellspacing="0" border="0" style="width:100%; margin:20px 0;">
+   	   <?php foreach($shows as $show){ ?>
+	   
+	   		<?php if(!empty($show->sh)){ ?>
+	   			<?php foreach($show->sh as $s){ ?>
+	   			<tr class="show">
+	   				<td><h3><?php echo $s->time; ?></h3></td>
+	   				<td>
+	   					<h3><?php echo $s->title; ?></h3>
+	   					<span class="dur"><?php echo $s->duration; ?></span>
+	   					<p class="syn_id"><?php echo $s->syn_id; ?></p>
+	   					<p class="syn_en"><?php echo $s->syn_en; ?></p>
+	   				</td>
+	   			</tr>
+	   			<?php } ?>
+	   		<?php }else{ ?>		
+	   			<h3>No Data</h3>
+	   		<?php } ?>
+	   		
+	   <?php } ?>
+   </table>
+   <?php } ?>	 
     
     <img src="http://www.cepat.net.id/tv/images/tvcable2.jpg">
 
