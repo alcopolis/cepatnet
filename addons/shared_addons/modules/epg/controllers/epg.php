@@ -20,6 +20,7 @@ class Epg extends Public_Controller
 		$this->load->model('epg_ch_m');
 		$this->load->model('epg_sh_m');
 		$this->load->library('form_validation');
+		$this->load->library('alcopolis');
 		$this->lang->load('epg');
 		
 		// Set validation rules
@@ -45,34 +46,19 @@ class Epg extends Public_Controller
 		foreach($channels as $c){
 			$ch[$c->id] = $c->name;
 		}
-				
-		$cats = $this->epg_ch_m->get_categories();
-			
-		foreach($cats as $ct){
-			if($ct->id == '0'){
-				$cat[0] = 'All Categories';
-			}else{
-				$cat[$ct->id] = $ct->cat;
-			}
-		}
-		
+						
 		$tgl = '';
 		
 		
 		if($this->form_validation->run()){
-
-			$cond = array(
-					'date' => $this->input->post('date'),
-					'cat_id' => $this->input->post('cat_id')
-			);
-			
-			$sh = $this->epg_sh_m->get_epg_by($cond);
+			$cond = $this->alcopolis->array_from_post(array('cid', 'date'), $this->input->post());
+			$sh = $this->epg_sh_m->get_epg_by($cond);			
 		}else{
-			$sh = $this->epg_sh_m->get_epg();
+			$sh = NULL;
 			$tgl = date('Y-m-d');
 		}
 		
-		$this->render('tv-guide', array('shows'=>$sh, 'ch'=>$ch, 'cat'=>$cat, 'tgl'=>$tgl));
+		$this->render('tv-guide', array('shows'=>$sh, 'ch'=>$ch, 'tgl'=>$tgl));
 	}
 	
 	

@@ -290,23 +290,14 @@ class Epg_Sh_m extends MY_Model {
 	public function get_epg_by($where){
 		$data = new stdClass();
 		
-		if($where['cat_id'] == '0'){
-			$chs = $this->db->where('is_active', 1)->order_by('name', 'asc')->get('inn_epg_ch_detail')->result();
-		}else{
-			$chs = $this->db->where(array('is_active'=>1, 'cat'=>$where['cat_id']))->order_by('name', 'asc')->get('inn_epg_ch_detail')->result();
-		}
-		
-			
-		foreach($chs as $ch){
-			$key = $ch->id;
-				
-			$data->$key = new stdClass();
-			$data->$key->ch = $ch;
+		$ch = $this->db->where(array('is_active'=>1, 'id'=>$where['cid']))->get('inn_epg_ch_detail')->row();
 
-			$this->db->where('cid',$key);
-			$this->db->where('date', $where['date']);
-			$data->$key->sh = $this->db->get($this->_table)->result();
-		}
+		$data->ch = $ch;
+
+		$this->db->where('cid',$where['cid']);
+		$this->db->where('date', $where['date']);
+		
+		$data->sh = $this->db->get($this->_table)->result();
 				
 		return $data;
 	}
