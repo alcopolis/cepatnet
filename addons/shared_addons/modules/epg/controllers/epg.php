@@ -48,17 +48,19 @@ class Epg extends Public_Controller
 		}
 						
 		$tgl = '';
-		
+		$ch_info = NULL;
 		
 		if($this->form_validation->run()){
 			$cond = $this->alcopolis->array_from_post(array('cid', 'date'), $this->input->post());
-			$sh = $this->epg_sh_m->get_epg_by($cond);			
+			$sh = $this->epg_sh_m->get_epg_by($cond);	
+			$tgl = $this->input->post('date');
+			$ch_info = $this->epg_ch_m->get_channel_by(array('id'=>$this->input->post('cid')), '', TRUE);
 		}else{
 			$sh = NULL;
 			$tgl = date('Y-m-d');
 		}
 		
-		$this->render('tv-guide', array('shows'=>$sh, 'ch'=>$ch, 'tgl'=>$tgl));
+		$this->render('tv-guide', array('shows'=>$sh, 'ch'=>$ch, 'tgl'=>$tgl, 'ch_info'=>$ch_info));
 	}
 	
 	

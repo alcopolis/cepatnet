@@ -28,6 +28,7 @@ $(document).ready(function(){
 	});
 	
 	$('#datepicker, .datepicker').datepicker({dateFormat: 'yy-mm-dd'});
+	$('#ui-datepicker-div').css('display', 'none');
 	
 	$('#content-bg').height($('#content').innerHeight() + 16);
 });

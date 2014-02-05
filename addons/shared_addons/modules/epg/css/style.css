@@ -36,29 +36,48 @@ span#ch{
 
 /* ====================================================== Frontend Show Page ======================================================= */
 
+#full-content{padding:1px 0 20px 0;}
+
+#main{background:#FFF;}
+
+
+#no-data{text-align:center; height:180px;}
 #sch-util{
-	width:100%;
-	margin:20px 0;
+	width:940px;
+	padding:5px 10px 8px 10px;
+	margin:40px 0;
+	background-color:#333;
+	color:#FFF;
+	border-radius:5px;
 }
 
-#sch-input{
-	background:#EFEFEF;
+
+#sch-filter{
+/* 	background-color:#CCC;  */
 }
 
-#sch-input #today{float:left; margin:0; width:180px; padding:0 !important;}
-.filter{float:left; min-width:80px !important; max-width:200px !important; background:#FF0; padding:10px;}
-
-.filter input, .filter textarea, .filter select{
+.filter{float:left; padding:0; margin:0 5px;}
+#sch-filter input, #sch-filter textarea, #sch-filter select{
     border: 1px solid #DDDDDD;
     border-radius: 3px;
 	background:#FFF;
     color: #333333;
     font-family: "Arial",Helvetica,Tahoma,sans-serif;
     font-size: 12px;
-    padding: 8px 10px !important;
+    padding: 5px;
 }
 
-.filter select#cid{width:180px !important;}
-.filter input#date{width:80px !important; margin:0;}
-.filter input[type="submit"]{margin:0;}
+#sch-filter select{width:180px !important;}
+#sch-filter input#date{width:80px !important; margin:0; padding:6px 5px;}
+#sch-filter input[type="submit"]{margin:0; cursor:pointer;}
 
+#epg-tool{color:#333; width:900px; margin:0 auto;}
+#today td{padding-left:10px; font-size:2em;}
+
+.show td{padding:10px;}
+.show .sch-time{background:#DDD; border-radius:5px 0 0 5px; font-size:1.5em; width:100px; text-align:center}
+.show .sch-data{background:#EEE; border-radius:0 5px 5px 0; color:#666; /*box-shadow:-5px 0 5px #999;*/}
+.show .sch-data p{padding:0;}
+.show .sch-data hr{border:1px solid #FFF;}
+.show .sch-data .title{color:#333; font-size:1.5em;}
+.show .sch-data .title > .dur{color:#333; font-size:.75em;}
