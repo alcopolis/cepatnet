@@ -72,7 +72,7 @@ span#ch{
 #sch-filter input[type="submit"]{margin:0; cursor:pointer;}
 
 #epg-tool{color:#333; width:900px; margin:0 auto;}
-#today td{padding-left:10px; font-size:2em;}
+#today td{padding-left:10px; font-size:2em; line-height:14px; color:#666;}
 
 .show td{padding:10px;}
 .show .sch-time{background:#DDD; border-radius:5px 0 0 5px; font-size:1.5em; width:100px; text-align:center}
@@ -80,4 +80,4 @@ span#ch{
 .show .sch-data p{padding:0;}
 .show .sch-data hr{border:1px solid #FFF;}
 .show .sch-data .title{color:#333; font-size:1.5em;}
-.show .sch-data .title > .dur{color:#333; font-size:.75em;}
+.show .sch-data .title > .dur{color:#333; font-size:.65em;}

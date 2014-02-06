@@ -25,16 +25,16 @@
    
    
    <?php if($shows != NULL){ ?> 
-	   <table id="epg-tool" cellpadding="0" cellspacing="10" border="0">		   
+	   <table id="epg-tool" cellpadding="0" cellspacing="5" border="0">		   
 		   		<?php if(!empty($shows->sh)){ ?>
 	   				<tr id="today">
-	   					<td colspan="2">
-	   						<p>
-	   							<?php echo $ch_info->name; ?>
-	   							<br/>
+	   					<td colspan="2" class="clearfix">
+	   						<p style="width:500px; float:left;">
+	   							<?php echo $ch_info->name; ?> | Ch. <?php echo $ch_info->num; ?>
+	   							<br/><br/>
 	   							<span style="font-size:14px;"><?php echo $ch_info->desc; ?></span>
 	   						</p>
-	   						<?php echo $tgl != NULL ? date('d F Y', strtotime($tgl)) : date('d F Y'); ?>
+	   						<p style="width:260px; font-size:18px; font-weight:600; float:right; text-align:right;"><?php echo $tgl != NULL ? date('d F Y', strtotime($tgl)) : date('d F Y'); ?></p>
 	   					</td>
 	   				</tr>
 	   				
@@ -42,7 +42,7 @@
 		   			<tr class="show">
 		   				<td class="sch-time"><?php echo date('H:i a', strtotime($s->time)); ?></td>
 		   				<td class="sch-data">
-		   					<p class="title"><?php echo $s->title; ?> | <span class="dur"><?php echo date('H:i ', strtotime($s->duration)); ?></span></p>
+		   					<p class="title"><?php echo $s->title; ?> | <span class="dur">Durasi <?php echo date('H:i ', strtotime($s->duration)); ?></span></p>
 		   					<?php if($s->syn_id != NULL){ ?>
 			   					<p class="syn_id"><?php echo $s->syn_id; ?></p>
 			   					<?php if($s->syn_en != NULL){ ?>
@@ -62,7 +62,7 @@
 	   	
 	   <?php //var_dump($shows); ?>
    <?php }else{ ?>
-	   <div style="min-height:300px;">Epg Home</div>
+	   <div style="min-height:300px; text-align:center"><img src="{{theme:image_path}}tv-guide-home.jpg" style="width:auto;" /></div>
    <?php } ?>	 
     
     <img src="http://www.cepat.net.id/tv/images/tvcable2.jpg">
