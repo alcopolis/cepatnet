@@ -14,9 +14,12 @@ article a:hover, article a:visited:hover{color: #FC0}
 #home article{
 	width:180px;
 	float:left;
-	margin:0 0 0 35px;
+	padding:0 20px;
 	font-size:12px;
 	line-height:14px;
+	border-right:1px dotted #CCC;
 }
 
-#home article:last-child{}
+#home article:last-child{border-right:none;}
+
+div.orbit-wrapper{box-shadow:0 5px 20px #CCC;}

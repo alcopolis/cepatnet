@@ -18,13 +18,7 @@
         </div>
     </div> 
     
-    <div id="main-banner" class="orbit-slider" style="width:960px; height:290px; margin:0 auto; padding:0;">
-        {{ blog:posts category="promo" order-dir="random" limit="2" }}
-            <div style="width:100%; margin:0; padding:0; background:url({{url:base}}uploads/default/files/{{ cover:filename }}) no-repeat center center; background-size:100% auto;">
-            	<a href="corporate/{{ slug }}" style="display:block; width:980px; height:300px;" ></a>
-            </div>
-        {{ /blog:posts }}
-        
+    <div id="main-banner" class="orbit-slider" style="width:960px; height:290px; margin:0 auto; padding:0;">        
         {{ pages:children id="6" order-dir="random" limit="5" }}
              <div style="width:100%; margin:0; padding:0; background:url({{url:base}}uploads/default/files/{{ custom_fields }}{{ corp_poster:filename }}{{ /custom_fields }}) no-repeat center center; background-size:100% auto;">
                 <a href="corporate/{{ slug }}" style="display:block; width:980px; height:300px;" ></a>
@@ -50,27 +44,18 @@
     {{ if page:is_home == true }}
         <div style="padding:0 0 20px 0; position:relative;">
             <section id="customers" class="wrapper clearfix">
-               <!-- <h6 style="text-align:left; padding-left:2px; border-left:5px solid #F00; color:#CCC; font-weight:normal; position:relative; top:0px; margin-bottom:10px"><span style="display:block; width:240px;background:#F00; color:#FFF; margin:0; padding:0 10px;">Our Customers</span></h6>-->
-                <h6 style="text-align:center; color:#CCC; font-weight:normal; text-shadow:0 -1px 0 #999; margin-top:10px">Our Customers</h6>
+                <h6 style="text-align:left; color:#999; font-weight:normal; font-size:24px; margin-top:10px; border-bottom:1px dotted #CCC;">Our Customers</h6>
                 <div style="margin:30px auto 20px auto; width:860px">
-                {{ blog:posts category="customers" order-dir="random" limit="6" }}
-        			<img src="uploads/default/files/{{ cover:filename }}" style="width:100px; margin:0 20px; padding:0; border:none;" title="{{ title }}" />
-                {{ /blog:posts }}
+	                {{ blog:posts category="customers" order-dir="random" limit="6" }}
+	        			<img src="uploads/default/files/{{ cover:filename }}" style="width:100px; margin:0 20px; padding:0; border:none;" title="{{ title }}" />
+	                {{ /blog:posts }}
                 </div>
             </section>
         </div> 
     {{ endif }}
     
-    <div id="footer" style="background:#0c223f;">
-        <p id="copy" style="text-align:center; padding-top:10px; font-size:11px; color:rgba(255,255,255,.25); border-top:1px solid rgba(255,255,255,.1);">&copy;{{ helper:date format="Y" }} {{ settings:site_name }}. {{ helper:lang line="all_right_reserved" }} <a class="last" href="{{ url:current }}#top" title="{{ helper:lang line="back_to_top" }}">{{ helper:lang line="top_page" }} &uarr;</a></p>
-    </div>
     
-    <!-- Begin scripts -->
-{{ theme:js file="main.js" }}
-{{ theme:js file="localscroll.js" }}
-{{ theme:js file="scrollto.js" }}
-{{ theme:js file="easing.js" }}
-{{ theme:js file="global.js" }}
-<!-- End scripts -->
+    {{ theme:partial name="footer" }}
+    
 </body>
 </html>

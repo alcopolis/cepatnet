@@ -1,4 +1,4 @@
-<aside style="margin-top:50px; padding:10px; width:200px; background:#EEE; border-radius:0px;">    
+<aside style="margin-top:40px; padding:10px; width:200px; border-radius:0px;">    
 	
     {{ if page:is_home == false }}
 		{{ widgets:area slug="sidebar" }}
@@ -12,8 +12,8 @@
 		</ul>
 	</div>
     <div id="ads" class="side-group" style="margin:20px 0">
-		<ul>
-			<li style="list-style:none;"><img src="http://cepat.net.id/images/promo-mgm-banner.jpg" style="width:100%" /></li>
-		</ul>
+		{{ blog:posts limit=&quot;1&quot; category=&quot;side-promo&quot; order-dir=&quot;desc&quot; }}
+			<div style="border-radius:5px; overflow:hidden; box-shadow:0 0 2px #CCC; height:300px;"><a href="{{ url }}" style="display:block;"><img data-pyroimage="true" src="uploads/default/files/{{ cover:filename }}" style="width:200px; height:300px;" /></a></div> 
+		{{ /blog:posts }}
 	</div>
 </aside>
