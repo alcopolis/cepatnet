@@ -13,5 +13,5 @@ a:active, a:visited:active { color: #ffffff; }
 a:hover, a:visited:hover { color: #212328; text-shadow: 1px 1px 1pxpx #333; }
 p { padding: 0 0 15px 0; }
 code { display: block; white-space: pre; background-color: #fbfbfd; border: 1px solid #dae0e4; font-size: 11px; color: #7d7d7d; margin: 10px 4px; overflow: auto; padding: 8px; font-family: Consolas, "Courier new", monospace; }
-ul li { list-style: disc outside url(../img/bullet.png); padding: 5px 0 6px 0; }
+ul li { list-style: none; }
 small{font-size:10px}

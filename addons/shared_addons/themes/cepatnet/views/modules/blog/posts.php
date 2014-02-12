@@ -30,6 +30,8 @@
 	            <p><a href="{{ url }}">{{ helper:lang line="blog:read_more_label" }}</a></p>
 	
 	        </article>
+        {{ else }}
+        	 <h3><a href="{{ url }}">{{ title }}</a></h3>           
         {{ endif }}
     {{ /posts }}
     

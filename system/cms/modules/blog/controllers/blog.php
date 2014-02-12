@@ -64,7 +64,7 @@ class Blog extends Public_Controller
 			'where'			=> "`status` = 'live'",
 			
 			//Select by category where category not customers and main banner
-			'where'			=> '`category_id` NOT IN (3)',
+			'where'			=> "`category_id` IN (4)",
 			'paginate'		=> 'yes',
 			'pag_base'		=> site_url('news/page'),
 			'pag_segment'   => 3
