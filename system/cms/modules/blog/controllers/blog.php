@@ -426,6 +426,7 @@ class Blog extends Public_Controller
 		$this->session->set_flashdata(array('referrer' => $this->uri->uri_string()));
 
 //		$this->template->set_breadcrumb(lang('blog:blog_title'), 'blog');
+		
 		$this->template->set_breadcrumb('News', 'news');
 
 		if ($post['category_id'] > 0)

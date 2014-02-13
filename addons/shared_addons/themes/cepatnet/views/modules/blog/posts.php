@@ -4,21 +4,18 @@
     	{{ if category:slug == "news" }}
 	        <article class="post">
 	
-	            <h3><a href="{{ url }}">{{ title }}</a></h3>
+	            <h3 class="title"><a href="{{ url }}">{{ title }}</a></h3>
 	
-	            <div class="meta">
-	
-	                <div class="date">
-	                    <span>{{ helper:date timestamp=created_on }}</span>
+                <div class="meta date">
+                    <span>{{ helper:date timestamp=created_on }}</span>
+                </div>
+    
+                {{ if category and category:slug != "news" }}
+	                <div class="category">
+	                    {{ helper:lang line="blog:category_label" }}
+	                    <span><a href="{{ url:site }}news/category/{{ category:slug }}">{{ category:title }}</a></span>
 	                </div>
-	    
-	                {{ if category and category:slug != "news" }}
-		                <div class="category">
-		                    {{ helper:lang line="blog:category_label" }}
-		                    <span><a href="{{ url:site }}news/category/{{ category:slug }}">{{ category:title }}</a></span>
-		                </div>
-	                {{ endif }}
-	            </div>
+                {{ endif }}
 	
 	            <div class="preview clearfix">
 		            {{ if cover }}
@@ -27,7 +24,7 @@
 	            	<p>{{ preview }}</p>
 	            </div>
 	
-	            <p><a href="{{ url }}">{{ helper:lang line="blog:read_more_label" }}</a></p>
+	            <p class="more"><a href="{{ url }}">{{ helper:lang line="blog:read_more_label" }}</a></p>
 	
 	        </article>
         {{ else }}

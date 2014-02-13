@@ -71,13 +71,13 @@ span#ch{
 #sch-filter input#date{width:80px !important; margin:0; padding:6px 5px;}
 #sch-filter input[type="submit"]{margin:0; cursor:pointer;}
 
-#epg-tool{color:#333; width:900px; margin:0 auto;}
+#epg-tool{color:#333; width:900px; margin:0 auto; font-family:"Titillium Web",Helvetica Neue,Helvetica,Tahoma,sans-serif;}
 #today td{padding-left:10px; font-size:2em; line-height:14px; color:#666;}
 
 .show td{padding:10px;}
-.show .sch-time{background:#DDD; border-radius:5px 0 0 5px; font-size:1.5em; width:100px; text-align:center}
+.show .sch-time{background:#DDD; border-radius:5px 0 0 5px; font-size:1.25em; width:100px; text-align:center}
 .show .sch-data{background:#EEE; border-radius:0 5px 5px 0; color:#666; /*box-shadow:-5px 0 5px #999;*/}
-.show .sch-data p{padding:0;}
+.show .sch-data p{padding:0; font-size:14px; line-height:1.25em}
 .show .sch-data hr{border:1px solid #FFF;}
-.show .sch-data .title{color:#333; font-size:1.5em;}
+.show .sch-data .title{color:#333; font-size:1.25em;}
 .show .sch-data .title > .dur{color:#333; font-size:.65em;}

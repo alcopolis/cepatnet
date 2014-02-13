@@ -23,3 +23,17 @@ article a:hover, article a:visited:hover{color: #FC0}
 #home article:last-child{border-right:none;}
 
 div.orbit-wrapper{box-shadow:0 5px 20px #CCC;}
+
+section.post {padding:0;}
+section.post h1, .post h2, .post h3, .post h4, .post h5, .post h6 { padding: 0 0 0 0; color: #F00; }
+section.post .body{margin:20px 0;}
+section.post img {box-shadow:0 0 5px #AAA;}
+
+section.post .meta{padding-left:24px; margin:10px 20px 10px 0; color:#999;}
+section.post .date{background:url(../img/icon/calendar.png) no-repeat left center;}
+section.post .author{background:url(../img/icon/author.png) no-repeat left center;}
+section.post .keywords{background:url(../img/icon/tags.png) no-repeat left center; margin-right:0;}
+
+article h3.title, article h3.title a{color:#07114A;}
+article.post{margin:0 0 0 0; padding:0 10px; border-bottom:1px solid #DDD;}
+article.post.view{border-bottom:none;}

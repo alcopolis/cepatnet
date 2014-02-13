@@ -1,41 +1,24 @@
 {{ post }}
 
-<article class="post">
+<article class="post view">
 
-	<h3>{{ title }}</h3>
-		
-	{{ if category:slug == "news" }}
-		<div class="meta">
-			<div class="date">
-				{{ helper:lang line="blog:posted_label" }}
-				<span>{{ helper:date timestamp=created_on }}</span>
-			</div>
+	<h3 class="title">{{ title }}</h3>
 	
-			<div class="author">
-				{{ helper:lang line="blog:written_by_label" }}
-				<span><a href="{{ url:site }}user/{{ created_by:user_id }}">{{ created_by:display_name }}</a></span>
-			</div>
-	
-<!-- 			<div class="category"> -->
-<!-- 				{{ helper:lang line="blog:category_label" }} -->
-<!-- 				<span><a href="{{ url:site }}blog/category/{{ category:slug }}">{{ category:title }}</a></span> -->
-<!-- 			</div> -->
-	
-			{{ if keywords }}
-				<div class="keywords">
-					Tags &raquo; &nbsp;&nbsp; 
-					{{ keywords }}
-						<span><a href="{{ url:site }}news/tagged/{{ keyword }}">{{ keyword }}</a></span>&nbsp;|&nbsp;
-					{{ /keywords }}
-				</div>
-			{{ endif }}
-		</div>
-	{{ endif }}
+	<div style="margin:10px 0;">
+		<span class="meta date" title="Posted on">{{ helper:date timestamp=created_on }}</span><span class="meta author" title="author">{{ created_by:display_name }}</span>
+	</div>
 
 	<div class="body">
 		{{ body }}
 	</div>
-
+		
+	{{ if keywords }}
+		<div class="meta keywords" title="keywords" style="border-top:1px dotted #CCC; padding-top:10px;">
+			{{ keywords }}
+				<span><a href="{{ url:site }}news/tagged/{{ keyword }}">{{ keyword }}</a></span>&nbsp;&nbsp;
+			{{ /keywords }}
+		</div>
+	{{ endif }}
 </article>
 
 {{ /post }}
