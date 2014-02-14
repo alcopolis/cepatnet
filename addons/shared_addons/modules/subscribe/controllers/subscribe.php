@@ -82,7 +82,7 @@ class Subscribe extends Public_Controller
 				$this->email->cc('');
 				$this->email->bcc('');
 					
-				$this->email->subject('[ #' . $ticketid . ' ] Permohonan Berlangganan Innovate');
+				$this->email->subject('[ #' . $ticketid . ' ] Permohonan Berlangganan Homelinks');
 				$this->email->message($msg);
 					
 				$this->email->send();

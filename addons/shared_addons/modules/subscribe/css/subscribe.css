@@ -14,11 +14,24 @@
 #subscribe-ack h1{color:#F00; font-size:18px; font-weight:normal;}
 #subscribe-ack p{font-size:12px; line-height:16px;}
 
+#subscribe-content{
+	width:718px; height:auto;
+	color:#333;
+	margin:20px 0 40px 40px;
+/* 	outline:1px solid #CCC; */
+
+	border:1px solid #CCC;
+	border-radius:5px;
+
+	position:relative;
+	overflow:hidden;
+}
+
+#container{width:1440px; display:block; position:relative; left:0;}
 
 #form-container{
-	width:700px;
-	color:#333;
-	margin:20px 0 40px 20px;	
+	width:718px;
+	display:block;
 }
 
 #form-container h1{color:#39C;}
@@ -27,7 +40,6 @@
 	background:rgba(255,255,255,.9);
 	padding:40px 0 20px 0;
 	border-radius:5px;
-	outline:1px solid #CCC;
 }
 
 #subscribe-form input, #subscribe-form textarea{border:1px solid #CCC; border-radius:5px; padding:5px; color:#666; font-family:"Arial", Verdana, Geneva, sans-serif; font-size:12px;}
