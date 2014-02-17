@@ -1,9 +1,10 @@
+<h2 id="page_title">{{ helper:lang line="blog:archive_title" }} - {{ month_year }}</h2>
+
 {{ if posts }}
-        	
-    {{ posts }}
-    	{{ if category:slug == "news" }}
-	        <article class="post-item">
-	
+
+	{{ posts }}	    
+		
+			<article class="post-item">
 	            <h3 class="title"><a href="{{ url }}">{{ title }}</a></h3>
 	
                 <div class="meta date">
@@ -25,15 +26,12 @@
 	            </div>
 	
 	            <p class="more"><a href="{{ url }}">{{ helper:lang line="blog:read_more_label" }}</a></p>
-	
-	        </article>
-        {{ else }}
-        	 <h3><a href="{{ url }}">{{ title }}</a></h3>           
-        {{ endif }}
-    {{ /posts }}
-    
-    {{ pagination }}
-	
+        	</article>	           
+        
+	{{ /posts }}
+
+	{{ pagination }}
+
 {{ else }}
 	
 	{{ helper:lang line="blog:currently_no_posts" }}

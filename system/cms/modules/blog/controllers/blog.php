@@ -166,7 +166,7 @@ class Blog extends Public_Controller
 			'stream'		=> 'blog',
 			'namespace'		=> 'blogs',
 			'limit'			=> Settings::get('records_per_page'),
-			'where'			=> "`status` = 'live'",
+			'where'			=> "`status` = 'live' AND category_id IN ('1','4','7')",
 			'year'			=> $year,
 			'month'			=> $month,
 			'paginate'		=> 'yes',

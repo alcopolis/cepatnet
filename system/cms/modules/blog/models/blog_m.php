@@ -224,14 +224,15 @@ class Blog_m extends MY_Model
 								AND YEAR(FROM_UNIXTIME(t1.created_on)) = YEAR(FROM_UNIXTIME(t2.created_on))
 								AND status = "live"
 								AND created_on <= '.now().'
+								AND category_id IN ("1","4","7")
 							) as post_count');
 
 		$this->db->where('status', 'live');
-		$this->db->where('created_on <=', now());
+		$this->db->where('created_on <=', now());	
 		$this->db->having('post_count >', 0);
 		$this->db->order_by('t1.created_on DESC');
 		$query = $this->db->get();
-
+		
 		return $query->result();
 	}
 

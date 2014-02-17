@@ -1,6 +1,6 @@
 {{ post }}
 
-<article class="post view">
+<article class="post-item view">
 
 	<h3 class="title">{{ title }}</h3>
 	

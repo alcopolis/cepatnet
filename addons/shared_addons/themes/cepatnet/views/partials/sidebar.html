@@ -1,16 +1,19 @@
 <aside style="margin-top:40px; padding:10px; width:200px; border-radius:0px;">    
 	
-    {{ if page:is_home == false }}
-		{{ widgets:area slug="sidebar" }}
-    {{ endif }}
-    
-    <div id="quicklink" class="side-group">
+	<div id="quicklink" class="side-group">
 		<ul>
 			<li style="list-style:none;"><a href="epg" title="Homelinks TV Guide"><img src="{{theme:image_path}}/jadwal-tv.png" style="width:100%; border-radius:5px;" /></a></li>
             <li style="list-style:none;"><a href="subscribe" title="Register"><img src="{{theme:image_path}}/register.png" style="width:100%; border-radius:5px;" /></a></li>
             <li style="list-style:none;"><a href="http://selfcare.cepat.net.id" title="Web Selfcare"><img src="{{theme:image_path}}/selfcare.png" style="width:100%; border-radius:5px;" /></a></li>
 		</ul>
 	</div>
+	
+    {{ if page:is_home == false }}
+    	{{ if blog:posts == true }}
+    		{{ widgets:area slug="sidebar-blog-utils" }}
+   		{{ endif }}
+    {{ endif }}
+    
     <div id="ads" class="side-group" style="margin:20px 0">
 		{{ blog:posts limit="1" category="side-promo" order-dir="desc" }}
 			<div style="border-radius:5px; overflow:hidden; box-shadow:0 0 2px #CCC; height:300px;"><a href="{{ url }}" style="display:block;"><img data-pyroimage="true" src="uploads/default/files/{{ cover:filename }}" style="width:200px; height:300px;" /></a></div> 

@@ -284,7 +284,8 @@ ul#foot-nav li a:hover { color: #ff6900; }
 ul#foot-nav li a.last { border: none; }
 
 /* Widget */
-aside .widget { font-family:  Tahoma, "Helvetica Neue", Helvetica, sans-serif; color: #7d7d7d; font-size: 13px; text-shadow: 1px 1px #ffffff; letter-spacing: 0.2px; padding: 0 0 25px  }
+aside .widget { font-family:  Tahoma, "Helvetica Neue", Helvetica, sans-serif; color: #7d7d7d; font-size: 13px; text-shadow: 1px 1px #ffffff; letter-spacing: 0.2px; margin:20px 0; padding: 10px 0; background:#EEE; box-shadow:0 0 2px #CCC}
+aside .widget h3{ margin:0 0 10px 30px; padding:0 0 5px 0; border-bottom:1px dotted #CCC; }
 aside .widget ul { margin-left: 30px; }
 
 /* Global Classes */
