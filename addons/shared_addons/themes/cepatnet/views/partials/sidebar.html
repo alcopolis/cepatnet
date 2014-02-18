@@ -8,10 +8,8 @@
 		</ul>
 	</div>
 	
-    {{ if page:is_home == false }}
-    	{{ if blog:posts == true }}
-    		{{ widgets:area slug="sidebar-blog-utils" }}
-   		{{ endif }}
+    {{ if {url:segments segment="1"} == 'news' }}
+    	{{ widgets:area slug="sidebar-blog-utils" }}
     {{ endif }}
     
     <div id="ads" class="side-group" style="margin:20px 0">

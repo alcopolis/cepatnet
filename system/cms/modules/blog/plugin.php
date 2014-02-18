@@ -277,6 +277,32 @@ class Plugin_Blog extends Plugin
 				
 				//$post['preview'] = (isset($post['intro'])) ? $post['intro'] : $post['body'];
 				$post['preview'] = (isset($post['intro'])) ? substr($post['intro'],0,160) . '...' : substr($post['body'],0,160) . '...';
+				
+				
+				
+				// Post cover replacement
+				$src = '';
+				if($post['cover'] == NULL){
+					$content = new DOMDocument();
+					$content->loadHTML($post['body']);
+				
+					$tags = $content->getElementsByTagName('img');
+						
+					if($tags != NULL){
+						foreach($tags as $tag){
+							$src[] = $tag->getAttribute('src');
+						}
+				
+						if($src != NULL){
+							$path = $src[0];
+								
+							$strbreak = explode('/', $path);
+							$strbrktotal = count($strbreak);
+							$post['cover']['id'] = $strbreak[$strbrktotal-1];
+						}
+				
+					}
+				}
 			}
 		}
 		

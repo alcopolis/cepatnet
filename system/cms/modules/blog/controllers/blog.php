@@ -63,7 +63,7 @@ class Blog extends Public_Controller
 			'limit'			=> 5,
 			'where'			=> "`status` = 'live'",
 			
-			//Select by category where category not customers and main banner
+			//Select by category where category is NEWS
 			'where'			=> "`category_id` IN (4)",
 			'paginate'		=> 'yes',
 			'pag_base'		=> site_url('news/page'),
@@ -219,6 +219,7 @@ class Blog extends Public_Controller
 		);
 		$data = $this->streams->entries->get_entries($params);
 		$post = (isset($data['entries'][0])) ? $data['entries'][0] : null;
+		
 
 		if ( ! $post or ($post['status'] !== 'live' and ! $this->ion_auth->is_admin()))
 		{
@@ -370,6 +371,33 @@ class Blog extends Public_Controller
 		{
 			$post['category'] = $this->categories[$post['category_id']];
 		}
+		
+		
+		// Post cover replacement
+		$src = '';
+		if($post['cover'] == NULL){
+			$content = new DOMDocument();
+			$content->loadHTML($post['body']);
+		
+			$tags = $content->getElementsByTagName('img');
+			
+			if($tags != NULL){
+				foreach($tags as $tag){
+					$src[] = $tag->getAttribute('src');
+				}
+				
+				if($src != NULL){
+					$path = $src[0];
+					
+					$strbreak = explode('/', $path);
+					$strbrktotal = count($strbreak);
+					$post['cover']['id'] = $strbreak[$strbrktotal-1];
+				}
+				
+			}
+		}
+		
+		
 	}
 
 	/**
@@ -426,7 +454,6 @@ class Blog extends Public_Controller
 		$this->session->set_flashdata(array('referrer' => $this->uri->uri_string()));
 
 //		$this->template->set_breadcrumb(lang('blog:blog_title'), 'blog');
-		
 		$this->template->set_breadcrumb('News', 'news');
 
 		if ($post['category_id'] > 0)
@@ -447,7 +474,7 @@ class Blog extends Public_Controller
 				}
 			}
 		}
-
+		
 		$this->_process_post($post);
 
 		// Add in OG keywords

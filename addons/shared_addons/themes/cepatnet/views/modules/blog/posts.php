@@ -18,14 +18,14 @@
                 {{ endif }}
 	
 	            <div class="preview clearfix">
-		            {{ if cover }}
-		                <img class="left" data-pyroimage="true" src="uploads/default/files/{{ cover:filename }}" style="width:180px; height:auto; margin:0 10px 10px 0;" />
+		            {{ if cover:id }}
+		                <img class="left" data-pyroimage="true" src="{{ url:site }}files/large/{{ cover:id }}" style="width:180px; height:auto; margin:0 10px 10px 0;" />
 		            {{ endif }}
-	            	<p>{{ preview }}</p>
+	            	<p>
+	            		{{ preview }}
+	            		<span class="more"><a href="{{ url }}">&nbsp;&nbsp;{{ helper:lang line="blog:read_more_label" }}</a></span>
+	            	</p>
 	            </div>
-	
-	            <p class="more"><a href="{{ url }}">{{ helper:lang line="blog:read_more_label" }}</a></p>
-	
 	        </article>
         {{ else }}
         	 <h3><a href="{{ url }}">{{ title }}</a></h3>           
