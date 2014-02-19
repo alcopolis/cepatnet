@@ -59,8 +59,8 @@ class Blog extends Public_Controller
 		$params = array(
 			'stream'		=> 'blog',
 			'namespace'		=> 'blogs',
-			//'limit'			=> Settings::get('records_per_page'),
-			'limit'			=> 5,
+			'limit'			=> Settings::get('records_per_page'),
+			//'limit'			=> 5,
 			'where'			=> "`status` = 'live'",
 			
 			//Select by category where category is NEWS

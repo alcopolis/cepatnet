@@ -39,21 +39,7 @@
     	<div class="wrapper">
             {{ theme:partial name="content" }}
         </div>
-    </div>
-    
-    {{ if page:is_home == true }}
-        <div style="padding:0 0 20px 0; position:relative;">
-            <section id="customers" class="wrapper clearfix">
-                <h6 style="text-align:left; color:#999; font-weight:normal; font-size:24px; margin-top:10px; border-bottom:1px dotted #CCC;">Our Customers</h6>
-                <div style="margin:30px auto 20px auto; width:860px">
-	                {{ blog:posts category="customers" order-dir="random" limit="6" }}
-	        			<img src="uploads/default/files/{{ cover:filename }}" style="width:100px; margin:0 20px; padding:0; border:none;" title="{{ title }}" />
-	                {{ /blog:posts }}
-                </div>
-            </section>
-        </div> 
-    {{ endif }}
-    
+    </div>    
     
     {{ theme:partial name="footer" }}
     

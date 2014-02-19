@@ -8,9 +8,9 @@
 
 .corp-prod-content{padding:0 0 20px 0;}
 
-.addthis_toolbox
+.addthis_toolbox.addthis-corporate
 {
-	width:184px;
+	width:112px;
 	text-align:center;
 	margin:0 auto;
 	/*background:#CCC;*/

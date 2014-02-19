@@ -32,7 +32,7 @@
         {{ endif }}
     {{ /posts }}
     
-    {{ pagination }}
+    <!-- {{ pagination }} -->
 	
 {{ else }}
 	

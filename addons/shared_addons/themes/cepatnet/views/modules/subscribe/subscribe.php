@@ -1,10 +1,10 @@
 <div id="subscribe-ack" class="left">
 	<h1 style="text-align:center; margin-bottom:40px;">Pendaftaran Layanan <br/><img src="{{ theme:image_path }}homelinks.png" style="width:100%;" /></h1>
 	{{ blog:posts limit="1" category="side-promo" order-dir="desc" }}
-		<div style="border-radius:5px; overflow:hidden; box-shadow:0 0 2px #CCC; height:300px;"><a href="{{ url }}" style="display:block;"><img data-pyroimage="true" src="uploads/default/files/{{ cover:filename }}" style="width:200px; height:300px;" /></a></div> 
+		<div style="border-radius:5px; overflow:hidden; box-shadow:0 0 2px #CCC; height:400px;"><a href="{{ url }}" style="display:block;"><img data-pyroimage="true" src="uploads/default/files/{{ cover:filename }}" style="width:200px; height:400px;" /></a></div> 
 	{{ /blog:posts }}
 	
-	<div style="margin-top:130px;">
+	<div style="margin-top:30px;">
 	    <h1>Perhatian</h1>
 	    <p>Calon pelanggan bertanggung jawab penuh terhadap kebenaran dari seluruh data dan informasi yg disampaikan didalam formulir pendaftaran.
 	    Homelinks berhak secara sepihak menolak permohonan calon pelanggan.</p>

@@ -1,4 +1,4 @@
-<h2 id="page_title">{{ helper:lang line="blog:archive_title" }} - {{ month_year }}</h2>
+<h2 id="page_title" style="color:#0C223F; border-bottom:3px solid #CCC; padding:10px 10px 0 10px; text-shadow:0 -1px 1px #CCC; text-align:right;">{{ helper:lang line="blog:archive_title" }} - {{ month_year }}</h2>
 
 {{ if posts }}
 

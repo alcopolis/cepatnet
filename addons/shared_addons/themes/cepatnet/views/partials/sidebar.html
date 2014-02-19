@@ -8,13 +8,13 @@
 		</ul>
 	</div>
 	
-    {{ if {url:segments segment="1"} == 'news' }}
+    {{ if {url:segments segment="1"} == 'hide' }}
     	{{ widgets:area slug="sidebar-blog-utils" }}
     {{ endif }}
     
-    <div id="ads" class="side-group" style="margin:20px 0">
+    <div id="ads" class="side-group" style="margin:40px 0 20px 0">
 		{{ blog:posts limit="1" category="side-promo" order-dir="desc" }}
-			<div style="border-radius:5px; overflow:hidden; box-shadow:0 0 2px #CCC; height:300px;"><a href="{{ url }}" style="display:block;"><img data-pyroimage="true" src="uploads/default/files/{{ cover:filename }}" style="width:200px; height:300px;" /></a></div> 
+			<div style="border-radius:5px; overflow:hidden; box-shadow:0 0 2px #CCC; height:400px;"><a href="{{ url }}" style="display:block;"><img data-pyroimage="true" src="uploads/default/files/{{ cover:filename }}" style="width:200px; height:400px;" /></a></div> 
 		{{ /blog:posts }}
 	</div>
 </aside>

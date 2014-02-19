@@ -129,6 +129,12 @@
         </div>
     </div>
 </div>
+<?php elseif($mode == 'corporate'): ?>
+<div class="addthis_toolbox addthis_default_style addthis-corporate addthis_32x32_style">
+    <a class="addthis_button_email"></a>
+    <a class="addthis_button_print"></a>
+    <a class="addthis_button_expanded"></a> 
+</div>
 <?php else: ?>
 <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
     <a class="addthis_button_twitter"></a>
