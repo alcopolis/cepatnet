@@ -4,6 +4,11 @@ body {
 	width:100%;
 }
 
+#maintenance{
+	background:url(../img/site-down.jpg) no-repeat center top;
+	min-height:655px;
+}
+
 #main{
 	width:100%;
 }

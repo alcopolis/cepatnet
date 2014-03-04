@@ -7,18 +7,26 @@
 <body>
     {{ integration:analytics }}
     
-    <div id="header">
-    	<div class="wrapper">
-        	{{ theme:partial name="header" }}
-        </div>
-    </div> 
-    
-    <div id="main">
-    	<div class="wrapper">
-        	{{ theme:partial name="content-corp" }}
-        </div>
-    </div> 
-    
-    {{ theme:partial name="footer" }}    
+    {{if alcopolis:site_status}}
+	    
+	    <div id="header">
+	    	<div class="wrapper">
+	        	{{ theme:partial name="header" }}
+	        </div>
+	    </div> 
+	    
+	    <div id="main">
+	    	<div class="wrapper">
+	        	{{ theme:partial name="content-corp" }}
+	        </div>
+	    </div> 
+	    
+	    {{ theme:partial name="footer" }} 
+	 
+	 {{else}}
+	 	
+	 	{{ theme:partial name="site_down" }}
+	 	
+	 {{ endif }}   
 </body>
 </html>

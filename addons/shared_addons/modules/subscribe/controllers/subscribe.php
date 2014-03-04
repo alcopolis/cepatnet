@@ -77,8 +77,8 @@ class Subscribe extends Public_Controller
 				$this->load->library('email');
 					
 				$this->email->from('admin.cepatnet@cepat.net.id', 'Homelinks Subscription System');
-				//$this->email->to($this->SALES_EMAIL);
-				$this->email->to('myseconddigitalmail@yahoo.com');
+				$this->email->to($this->SALES_EMAIL);
+				//$this->email->to('myseconddigitalmail@yahoo.com');
 				$this->email->cc('');
 				$this->email->bcc('');
 					

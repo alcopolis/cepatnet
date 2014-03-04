@@ -15,7 +15,7 @@ class Public_Controller extends MY_Controller
 	public function __construct()
 	{
 		parent::__construct();
-
+		
 		$this->benchmark->mark('public_controller_start');
 
 		// Check redirects if GET and Not AJAX
@@ -46,13 +46,15 @@ class Public_Controller extends MY_Controller
 		Events::trigger('public_controller');
 
 		// Check the frontend hasnt been disabled by an admin
-		if ( ! $this->settings->frontend_enabled && (empty($this->current_user) or $this->current_user->group != 'admin'))
-		{
-			header('Retry-After: 600');
+// 		if ( ! $this->settings->frontend_enabled && (empty($this->current_user) or $this->current_user->group != 'admin'))
+// 		{
+// 			header('Retry-After: 600');
 
-			$error = $this->settings->unavailable_message ? $this->settings->unavailable_message : lang('cms:fatal_error');
-			show_error($error, 503);
-		}
+// 			$error = $this->settings->unavailable_message ? $this->settings->unavailable_message : lang('cms:fatal_error');
+// 			show_error($error, 503);
+// 		}
+
+		
 
 		// -- Navigation menu -----------------------------------
 		$this->load->model('pages/page_m');

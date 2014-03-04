@@ -11,49 +11,56 @@
 <body>
 {{ endif }}
     {{ integration:analytics }}
-    
-    <div id="header">
-    	<div class="wrapper clearfix">
-        	{{ theme:partial name="header" }}
-        </div>
-    </div> 
-    
-    <div id="main-banner" class="orbit-slider" style="width:960px; height:290px; margin:0 auto; padding:0;">
-     	{{ pages:children id="6" order-dir="random" limit="5" }}
-             <div style="width:100%; margin:0; padding:0; background:url({{url:base}}uploads/default/files/{{ custom_fields }}{{ corp_poster:filename }}{{ /custom_fields }}) no-repeat center center; background-size:100% auto;">
-                <a href="corporate/{{ slug }}" style="display:block; width:980px; height:300px;" ></a>
-             </div>
-        {{ /pages:children }}
-    </div> 
         
-    
-    <div id="main">
-        <div id="util" style="background:#DEDEDE; margin:1px 0 0 0">
-            {{ if page:is_home == false }}
-                <div class="wrapper clearfix">
-                    {{ theme:partial name="breadcrumbs" }}
-                    <div class="right" style="padding:5px 0; display:block;">{{ widgets:instance id="6" }}</div>
-                </div>
-            {{ endif }}
-        </div>   
-    	<div class="wrapper">
-            {{ theme:partial name="content" }}
-        </div>
-    </div>
-    
-    {{ if {url:segments segment="1"} == 'about-us' }}
-        <div style="padding:0 0 20px 0; position:relative;">
-            <section id="customers" class="wrapper clearfix">
-                <h6 style="text-align:left; color:#999; font-weight:normal; font-size:24px; margin-top:10px; border-bottom:1px dotted #CCC;">Our Customers</h6>
-                <div style="margin:30px auto 20px auto; width:860px">
-	                {{ blog:posts category="customers" order-dir="random" limit="12" }}
-	        			<img src="uploads/default/files/{{ cover:filename }}" style="width:100px; margin:1px 20px; padding:0; border:none;" title="{{ title }}" />
-	                {{ /blog:posts }}
-                </div>
-            </section>
-        </div> 
-    {{ endif }}
-    
-    {{ theme:partial name="footer" }}
+    {{if alcopolis:site_status}}
+	    <div id="header">
+	    	<div class="wrapper clearfix">
+	        	{{ theme:partial name="header" }}
+	        </div>
+	    </div> 
+	    
+	    <div id="main-banner" class="orbit-slider" style="width:960px; height:290px; margin:0 auto; padding:0;">
+	     	{{ pages:children id="6" order-dir="random" limit="5" }}
+	             <div style="width:100%; margin:0; padding:0; background:url({{url:base}}uploads/default/files/{{ custom_fields }}{{ corp_poster:filename }}{{ /custom_fields }}) no-repeat center center; background-size:100% auto;">
+	                <a href="corporate/{{ slug }}" style="display:block; width:980px; height:300px;" ></a>
+	             </div>
+	        {{ /pages:children }}
+	    </div> 
+	        
+	    
+	    <div id="main">
+	        <div id="util" style="background:#DEDEDE; margin:1px 0 0 0">
+	            {{ if page:is_home == false }}
+	                <div class="wrapper clearfix">
+	                    {{ theme:partial name="breadcrumbs" }}
+	                    <div class="right" style="padding:5px 0; display:block;">{{ widgets:instance id="6" }}</div>
+	                </div>
+	            {{ endif }}
+	        </div>   
+	    	<div class="wrapper">
+	            {{ theme:partial name="content" }}
+	        </div>
+	    </div>
+	    
+	    {{ if {url:segments segment="1"} == 'about-us' }}
+	        <div style="padding:0 0 20px 0; position:relative;">
+	            <section id="customers" class="wrapper clearfix">
+	                <h6 style="text-align:left; color:#999; font-weight:normal; font-size:24px; margin-top:10px; border-bottom:1px dotted #CCC;">Our Customers</h6>
+	                <div style="margin:30px auto 20px auto; width:860px">
+		                {{ blog:posts category="customers" order-dir="random" limit="12" }}
+		        			<img src="uploads/default/files/{{ cover:filename }}" style="width:100px; margin:1px 20px; padding:0; border:none;" title="{{ title }}" />
+		                {{ /blog:posts }}
+	                </div>
+	            </section>
+	        </div> 
+	    {{ endif }}
+	    
+	    {{ theme:partial name="footer" }}
+	
+	{{ else }}
+	
+		{{ theme:partial name="site_down" }}
+		
+	{{ endif }}
 </body>
 </html>
