@@ -7,11 +7,12 @@ h5 { font-size: 18px; }
 h6 { font-size: 16px; }
 
 a, a:link, p, .post, ul, ol, dl, dd, li { font-family: "Titillium Web", Helvetica Neue, Helvetica, Tahoma, sans-serif; }
-li{list-style-position:inside}
+
 a, a:link { color: #35b0fa; text-decoration: none; }
 a:active, a:visited:active { color: #ffffff; }
 a:hover, a:visited:hover { color: #212328; text-shadow: 1px 1px 1pxpx #333; }
 p { padding: 0 0 15px 0; }
 code { display: block; white-space: pre; background-color: #fbfbfd; border: 1px solid #dae0e4; font-size: 11px; color: #7d7d7d; margin: 10px 4px; overflow: auto; padding: 8px; font-family: Consolas, "Courier new", monospace; }
+
 ul li { list-style: none; }
 small{font-size:10px}

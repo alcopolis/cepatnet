@@ -6,7 +6,15 @@
 
 article > img {border:none !important;}
 article a:hover, article a:visited:hover{color: #FC0}
-.post article h1, .post article h2, .post article h3, .post article h4, .post article h5, .post article h6{margin:10px 0; padding:0; font-weight:normal; line-height:1em}
+.post article{color:#666;}
+.post article h1, .post article h2, .post article h3, .post article h4, .post article h5, .post article h6{margin:10px 0; padding:0; font-weight:normal; line-height:1em; color:#0C223F;}
+
+article ul, article ol{margin:10px 20px;}
+article ul ul, article ol ul{margin:10px 0; padding:0 !important;}
+article ul li, article ol li{margin:0 0 40px 0;}
+article ul ul li, article ol ul li{margin:0 0 10px 0;}
+
+
 
 #home section.post{padding:0;}
 #home section.post img{margin:10px 0; width:100%;}
@@ -21,6 +29,7 @@ article a:hover, article a:visited:hover{color: #FC0}
 }
 
 #home article:last-child{border-right:none;}
+
 
 div.orbit-wrapper{box-shadow:0 5px 20px #CCC;}
 

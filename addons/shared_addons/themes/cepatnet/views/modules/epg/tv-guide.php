@@ -59,12 +59,10 @@
 		   			<div id="no-data">Sorry, no schedules data for this channel.</div>
 		   		<?php } ?>
 	   </table>
-	   	
-	   <?php //var_dump($shows); ?>
    <?php }else{ ?>
 	   <div style="min-height:300px; text-align:center"><img src="{{theme:image_path}}tv-guide-home.jpg" style="width:auto;" /></div>
    <?php } ?>	 
     
-    <img src="http://www.cepat.net.id/tv/images/tvcable2.jpg">
+    <img src="{{theme:image_path}}tvcable2.jpg">
 
 </div>
