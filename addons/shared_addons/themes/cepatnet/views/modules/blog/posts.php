@@ -27,8 +27,23 @@
 	            	</p>
 	            </div>
 	        </article>
+        {{ elseif category:slug == "career" }}
+	        <article class="post-item view" style="margin:0; padding:0 10px;">
+			
+				<div class="body">
+					{{ body }}
+				</div>
+					
+				{{ if keywords }}
+					<div class="meta keywords" title="keywords" style="border-top:1px dotted #CCC; padding-top:10px;">
+						{{ keywords }}
+							<span><a href="{{ url:site }}news/tagged/{{ keyword }}">{{ keyword }}</a></span>&nbsp;&nbsp;
+						{{ /keywords }}
+					</div>
+				{{ endif }}
+			</article>
         {{ else }}
-        	 <h3><a href="{{ url }}">{{ title }}</a></h3>           
+        	 <h3><a href="{{ url }}">{{ title }}</a></h3>
         {{ endif }}
     {{ /posts }}
     

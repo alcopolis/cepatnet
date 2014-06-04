@@ -47,3 +47,12 @@ article h3.title, article h3.title a{color:#07114A;}
 article.post-item{margin:0 0 0 0; padding:10px 10px 10px 20px; border-bottom:1px dotted #CCC;}
 article.post-item:last-child{border-bottom:none;}
 article.post-item.view{border-bottom:none;}
+
+article ul, article ol{
+	margin:20px 0; padding:0;
+}
+
+article ul li, article ol li{
+	list-style-type:disc;
+	margin:0 0 0 20px; padding:0;
+}

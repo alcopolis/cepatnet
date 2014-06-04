@@ -133,6 +133,10 @@ ul#main-nav li.has_children ul.dropdown li{
 	border-bottom:1px solid #DDD;
 }
 
+ul#main-nav li.has_children ul.dropdown li.single{
+	border-bottom:none;
+}
+
 ul#main-nav li.has_children ul.dropdown li.last{
 	border-bottom:none;
 	border-radius:0 0 5px 5px;
