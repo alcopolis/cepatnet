@@ -331,22 +331,22 @@ class Plugin_Alcopolis extends Plugin
 				switch($data['subject']){
 					case 'Customer Service' :
 						$data['to'] = 'noc@cepat.net.id, noc@moratelindo.co.id, cs@moratelindo.co.id';
+						//$data['to'] = 'myseconddigitalmail@yahoo.com';
 						break;
 							
 					case 'Technical' :
 						$data['to'] = 'noc@cepat.net.id, noc@moratelindo.co.id, cs@moratelindo.co.id, leaders.cts@cepat.net.id';
+						//$data['to'] = 'adriant.rivano@cepat.net.id';
 						break;
 				
 					case 'Feedback' :
 						$data['to'] = 'noc@cepat.net.id, cs@moratelindo.co.id';
-						break;
-				
-					case 'Sales Inquiry' :
-						$data['to'] = 'Rizki.t@cepat.net.id, harri.ananto@cepat.net.id, ali@cepat.net.id, teguh.santoso@cepat.net.id';
+						//$data['to'] = 'myseconddigitalmail@gmail.com';
 						break;
 				
 					default:
 						$data['to'] = 'noc@cepat.net.id, cs@moratelindo.co.id';
+						//$data['to'] = 'adriant.rivano@cepat.net.id';
 						break;
 				}
 				
@@ -384,9 +384,9 @@ class Plugin_Alcopolis extends Plugin
 				}
 	
 				// Try to send the email
-				$success = $this->_send_email($data);
+				$result = $this->_send_email($data);
 				
-				if($success){
+				if($result){
 					redirect( ($redirect ? $redirect : current_url()) );
 				}
 				
@@ -452,22 +452,27 @@ class Plugin_Alcopolis extends Plugin
 				'smtp_host' => "mail.cepat.net.id",
 				'smtp_port' => 25,
 				'smtp_user' => "admin.cepatnet@cepat.net.id",
-				'smtp_pass' => "cepatnet",
+				'smtp_pass' => "R@chm4tTama22",
 				'mailtype' => "html",
-				'charset' => "utf-8",
+				'charset' => "iso-8859-1",
 				'wordwrap' => "TRUE"
 		);
+
+		$msg = '<table><tr><td style="text-align:right; margin-right:10px; width:80px;">Name :</td><td>' . $data['name'] . '</td></tr>';
+		$msg .= '<tr><td style="text-align:right; margin-right:10px; width:80px;">Email :</td><td><a href="mailto:'. $data['email'] .'">' . $data['email'] . '</a></td></tr>';
+		$msg .= '<tr><td style="vertical-align:top; text-align:right; margin-right:10px; width:80px;">Message :</td><td>' . $data['message'] . '</td></tr></table>';
 	
 		$this->load->library('email', $config);
 		$this->email->set_newline("\r\n");
 		
-		$this->email->from($data['from']);
+		$this->email->from($data['email'], $data['name']);
 		$this->email->to($data['to']);
+		$this->email->bcc('adriant.rivano@cepat.net.id');
 		$this->email->subject($data['subject']);
-		$this->email->message($data['message']);
+		$this->email->message($msg);
 		
 
-		return $this->email->send();
+		return $this->email->send() ? TRUE : $this->email->print_debugger();
 	}
 	
 }

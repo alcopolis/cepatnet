@@ -3,14 +3,18 @@
 	<div style="margin:0; padding:0;"><img src="uploads/default/files/{{ page:corp_poster:filename }}" /></div>
 	
     <div class="corp-prod-content clearfix" style="border-radius:0">
-    	<div style="width:220px; margin:0 10px; float:left; position:relative; display:block; text-align:center;">
-            <div style="margin-top:60px; font-family:sans-serif; font-size:12px; color:#999">
+    	<div style="width:220px; margin:30px 10px 0 10px; float:left; position:relative; display:block; text-align:center;">
+            <div id="sales-link" class="side-group">
+				<a href="{{ url:site }}subscribe" style="display:block;"><img data-pyroimage="true" src="{{theme:image_path }}sales-home.png" style="width:200px; height:300px;" /></a>
+			</div>
+           
+            <img src="{{theme:image_path}}hotline.png" title="Hotline 31998600" style="margin-top:40px;"/>
+        	<p style="color:#999; font-size:12px;">Please Call For More Info</p>
+        	
+            <div style="margin-top:20px;margin-bottom:30px; font-family:sans-serif; font-size:12px; color:#999">
                 Share
                 {{ widgets:instance id="3"}} 
             </div>
-           
-            <img src="{{theme:image_path}}hotline.png" title="Hotline 31998600" style="margin-top:60px;"/>
-        	<p style="color:#999; font-size:12px; margin-bottom:30px">Please Call For More Info</p>
         </div> 
         
         <section class="post clearfix" style="width:638px; float:left;">

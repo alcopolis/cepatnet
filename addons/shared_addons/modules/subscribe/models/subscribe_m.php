@@ -13,22 +13,22 @@ class Subscribe_m extends MY_Model {
 				'name' => array(
 						'field' => 'name',
 						'label' => 'name',
-						'rules' => 'trim|required|is_unique[default_inn_subscribe.name]|xss_clean',
+						'rules' => 'trim|required|xss_clean',
 				),
 				'email' => array(
 						'field' => 'email',
 						'label' => 'email',
-						'rules' => 'trim|required|valid_email|is_unique[default_inn_subscribe.email]|xss_clean',
+						'rules' => 'trim|required|valid_email|xss_clean',
+				),
+				'company' => array(
+						'field' => 'company',
+						'label' => 'company',
+						'rules' => 'required|xss_clean',
 				),
 				'address' => array(
 						'field' => 'address',
 						'label' => 'address',
 						'rules' => 'required|min_length[10]|xss_clean',
-				),
-				'area_code' => array(
-						'field' => 'area_code',
-						'label' => 'area code',
-						'rules' => 'trim|required|numeric|xss_clean',
 				),
 				'phone' => array(
 						'field' => 'phone',
@@ -51,7 +51,7 @@ class Subscribe_m extends MY_Model {
 		 * then MY_Model would find it automatically. Since
 		 * I named it "sample" then we just set the name here.
 		 */
-		$this->_table = 'inn_subscribe';
+		$this->_table = 'subscribe';
 	}
 	
 	

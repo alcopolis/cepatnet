@@ -42,16 +42,16 @@
 	border-radius:5px;
 }
 
-#subscribe-form input, #subscribe-form textarea{border:1px solid #CCC; border-radius:5px; padding:5px; color:#666; font-family:"Arial", Verdana, Geneva, sans-serif; font-size:12px;}
+#subscribe-form input, #subscribe-form textarea, #subscribe-form select{border:1px solid #CCC; padding:5px; color:#666; font-family:"Arial", Verdana, Geneva, sans-serif; font-size:12px;}
 #subscribe-form label{color:#0C223F; font-size:14px;}
 
-form #subscribe-form input[type='text']{width:200px;}
-form #subscribe-form input[type='submit']{cursor:pointer; background:#F00; border:none; width:160px; padding:10px 0; color:#FFF; font-weight:bold;}
+form #subscribe-form input[type='text']{width:280px;}
+form #subscribe-form input[type='submit']{cursor:pointer; background:#EEE; border:none; width:160px; padding:10px 0; color:#0C223F; font-weight:bold;}
 form #subscribe-form input[type='submit']:hover{background:#0C223F; color:#FFF;}
 form #subscribe-form span{color:#F00; font-size:14px; font-weight:bold}
 
 ul.form{overflow:hidden;}
-ul.form li{margin:0 40px; padding:10px; /*background:rgba(30,200,255,.5);*/}
+ul.form li{margin:0 40px; padding:5px 10px; /*background:rgba(30,200,255,.5);*/}
 ul.form li.even{}
 
 

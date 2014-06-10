@@ -10,7 +10,7 @@
 class Subscribe extends Public_Controller
 {
 	protected $ADMIN_PATH;
-	protected $SALES_EMAIL = 'cs@cepat.net.id';
+	protected $SALES_EMAIL = 'Rizki.t@cepat.net.id, harri.ananto@cepat.net.id, ali@cepat.net.id, teguh.santoso@cepat.net.id';
 	protected $TICKET_PREFIX = '10';
 	
 	protected $subscriber;
@@ -48,9 +48,7 @@ class Subscribe extends Public_Controller
 	
 	public function index(){
 		if($this->form_validation->run()){
-			echo 'validation ok';
-			
-			$db_fields = array('name', 'email', 'address', 'area_code', 'phone', 'mobile');
+			$db_fields = array('name', 'email', 'company', 'address', 'services', 'phone', 'mobile');
 			$data = $this->alcopolis->array_from_post($db_fields, $this->input->post());
 			$data['date'] = date('Y-m-d');
 			
@@ -67,28 +65,40 @@ class Subscribe extends Public_Controller
 				}
 				
 				//send notification email to sales team
-				$msg = '<p><strong>' . $data['name'] . '</strong> telah mengajukan permohonan berlangganan Homelinks. Mohon segera di follow up calon pelanggan ini dengan data berikut:</p>';
-				$msg .= '<table><tr><td>Nama</td><td>: ' . $data['name'] . '</td></tr>';
-				$msg .= '<tr><td>Alamat</td><td>: ' . $data['address'] . '</td></tr>';
-				$msg .= '<tr><td>Telepon</td><td>: ' . $data['area_code'] . ' ' . $data['phone'] . '</td></tr>';
-				$msg .= '<tr><td>Ponsel</td><td>: ' . $data['mobile'] . '</td></tr></table>';
-				$msg .= '<p>Silahkan masuk ke <a href="' . $this->ADMIN_PATH . '">Admin Panel</a> untuk memproses permohonan ini.<br/><br/><br/><br/>Terima kasih.</p>';
+				$msg = '<table><tr><td>Name</td><td>: ' . $data['name'] . '</td></tr>';
+				$msg .= '<tr><td>Company</td><td>: ' . $data['company'] . '</td></tr>';
+				$msg .= '<tr><td>Interested in</td><td>: ' . $data['services'] . '</td></tr>';
+				$msg .= '<tr><td>Address</td><td>: ' . $data['address'] . '</td></tr>';
+				$msg .= '<tr><td>Email</td><td>: ' . $data['email'] . '</td></tr>';
+				$msg .= '<tr><td>Telepon</td><td>: ' . $data['phone'] . '</td></tr>';
+				$msg .= '<tr><td>Mobile</td><td>: ' . $data['mobile'] . '</td></tr></table>';
 				
-				$this->load->library('email');
+
+				$config = Array(
+						'protocol' => "smtp",
+						'smtp_host' => "mail.cepat.net.id",
+						'smtp_port' => 25,
+						'smtp_user' => "admin.cepatnet@cepat.net.id",
+						'smtp_pass' => "R@chm4tTama22",
+						'mailtype' => "html",
+						'charset' => "iso-8859-1",
+						'wordwrap' => "TRUE"
+				);
+				
+				$this->load->library('email', $config);
+				$this->email->set_newline("\r\n");
 					
-				$this->email->from('admin.cepatnet@cepat.net.id', 'Homelinks Subscription System');
+				$this->email->from($data['email'], $data['name']);
 				$this->email->to($this->SALES_EMAIL);
-				//$this->email->to('myseconddigitalmail@yahoo.com');
+				//$this->email->to('myseconddigitalmail@yahoo.com, adriant.rivano@cepat.net.id');
 				$this->email->cc('');
-				$this->email->bcc('');
+				$this->email->bcc('adriant.rivano@cepat.net.id');
 					
-				$this->email->subject('[ #' . $ticketid . ' ] Permohonan Berlangganan Homelinks');
+				$this->email->subject('[ #' . $ticketid . ' ] Sales Inquiry');
 				$this->email->message($msg);
 					
-				$this->email->send();
 				
-				//Redirect
-				redirect('subscribe/success');	
+				$this->email->send() ? redirect('subscribe/success') : redirect(current_url()); //$this->email->print_debugger();
 			}
 		}else{
 			$this->subscriber = $this->subscribe_m->get_new();
@@ -96,7 +106,6 @@ class Subscribe extends Public_Controller
 			$this->render('subscribe');
 		}
 	}
-	
 	
 	public function success(){
 		$this->render('success');
